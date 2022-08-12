@@ -9,7 +9,7 @@ const lightTheme = createTheme({
   type: "light",
   theme: {
     colors: {
-      primaryLight: "#FFF0D5ff",
+      /*     primaryLight: "#FFF0D5ff",
       primaryLightHover: "#EEE1D0ff",
       primaryLightActive: "#DDD2CCff",
       primaryLightContrast: "#CCC3C7ff",
@@ -18,9 +18,9 @@ const lightTheme = createTheme({
       primaryBorderHover: "#9995B9ff",
       primarySolidHover: "#8886B4ff",
       primarySolidContrast: "#7777B0ff",
-      primaryShadow: "#6668ABff",
-
-      color: "#777",
+      primaryShadow: "#6668ABff", */
+      /* color: "#777", */
+      body: "#ff7",
     }, // optional
   },
 });
@@ -29,16 +29,17 @@ const darkTheme = createTheme({
   type: "dark",
   theme: {
     colors: {
-      primaryLight: "#D8C69Cff",
+      /*       primaryLight: "#D8C69Cff",
       primaryLightHover: "#C4B48Fff",
       primaryLightActive: "#B0A282ff",
       primaryLightContrast: "#9C8F75ff",
-      primary: "#887D68ff",
+      primary: "#884D88ff",
       primaryBorder: "#756B5Bff",
       primaryBorderHover: "#61594Eff",
       primarySolidHover: "#4D4641ff",
       primarySolidContrast: "#393434ff",
-      primaryShadow: "#252227ff",
+      primaryShadow: "#252227ff", */
+      body: "#777",
     }, // optional
   },
 });

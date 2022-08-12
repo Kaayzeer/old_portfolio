@@ -5,19 +5,17 @@ import Image from "next/image";
 //styles
 import styles from "../styles/Home.module.css";
 
-//nextUI
-/* import { Button } from "@nextui-org/react"; */
-
 //components
 import Layout from "../components/Layout/Layout";
 import Banner from "../components/Banner/Banner.jsx";
+import { Spacer } from "@nextui-org/react";
 
 export default function Home() {
   return (
-    <Layout>
+    <Layout title="Nikolas Rosinelli Portfolio">
       <Banner />
 
-      {/* <Button>Click me</Button> */}
+      <Spacer y={3} />
     </Layout>
   );
 }

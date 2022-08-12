@@ -1,5 +1,5 @@
 .header {
-  background-color: rgba(158, 148, 148, 0.566);
+  /*  background-color: rgba(158, 148, 148, 0.566); */
   height: 80px;
   width: 100%;
 }
@@ -8,9 +8,11 @@
   display: flex;
   height: 100%;
   align-items: center;
+  padding: 0px 20px;
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
+  position: relative;
 }
 
 .img {
@@ -21,4 +23,21 @@
   height: 30px;
   width: 30px;
   cursor: pointer;
+}
+
+.menu {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  background-color: rgb(234, 234, 234);
+  height: 200px;
+  width: 200px;
+  border-radius: 8px;
+  padding: 10px 30px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: black;
 }
