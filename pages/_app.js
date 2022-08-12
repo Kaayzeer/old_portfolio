@@ -1,3 +1,5 @@
+import "../styles/globals.css";
+
 // 1. import `NextUIProvider` component
 import { createTheme, NextUIProvider } from "@nextui-org/react";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
@@ -17,6 +19,8 @@ const lightTheme = createTheme({
       primarySolidHover: "#8886B4ff",
       primarySolidContrast: "#7777B0ff",
       primaryShadow: "#6668ABff",
+
+      color: "#777",
     }, // optional
   },
 });

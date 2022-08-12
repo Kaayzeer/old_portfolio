@@ -1,0 +1,24 @@
+.header {
+  background-color: rgba(158, 148, 148, 0.566);
+  height: 80px;
+  width: 100%;
+}
+
+.nav {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.img {
+  margin-left: 0;
+}
+
+.hamburger {
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+}
