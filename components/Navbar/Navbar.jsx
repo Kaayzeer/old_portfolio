@@ -1,10 +1,14 @@
 import React, { useState } from "react";
+
+//styles
 import styles from "./navbar.module.css";
+
+//react icons
 import { GiHamburgerMenu } from "react-icons/gi";
-import { Image } from "@nextui-org/react";
-import { Container, Card, Row, Text } from "@nextui-org/react";
+
+//nextUI
 import { useTheme as useNextTheme } from "next-themes";
-import { Switch, useTheme } from "@nextui-org/react";
+import { Switch, useTheme, Image } from "@nextui-org/react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,7 +21,6 @@ export default function Navbar() {
   const { setTheme } = useNextTheme();
   const { isDark, theme } = useTheme();
 
-  console.log(theme);
   return (
     <header
       className={styles.header}

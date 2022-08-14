@@ -1,13 +1,20 @@
 import * as React from "react";
+
+//next
 import Head from "next/head";
-import Footer from "../Footer/footer";
-/* import Nav from "../Nav/Nav"; */
+
+//nextUI
 import { Container, useTheme } from "@nextui-org/react";
+
+//styles
 import styles from "../../styles/Home.module.css";
+
+//components
 import Navbar from "../Navbar/Navbar";
 
 const Layout = ({ children, title, keywords, description }) => {
   const { theme } = useTheme();
+
   return (
     <>
       <Head>
@@ -17,8 +24,9 @@ const Layout = ({ children, title, keywords, description }) => {
       </Head>
       <Container
         xl
+        responsive
         className={styles.section}
-        css={{ backgroundColor: theme?.colors.gray400.value }}
+        css={{ backgroundColor: theme?.colors.gray50.value }}
       >
         <div className={styles.border}>
           <Navbar />

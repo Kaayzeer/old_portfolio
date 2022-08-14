@@ -20,7 +20,6 @@ const lightTheme = createTheme({
       primarySolidContrast: "#7777B0ff",
       primaryShadow: "#6668ABff", */
       /* color: "#777", */
-      body: "#ff7",
     }, // optional
   },
 });
@@ -39,7 +38,6 @@ const darkTheme = createTheme({
       primarySolidHover: "#4D4641ff",
       primarySolidContrast: "#393434ff",
       primaryShadow: "#252227ff", */
-      body: "#777",
     }, // optional
   },
 });
