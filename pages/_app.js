@@ -28,16 +28,7 @@ const darkTheme = createTheme({
   type: "dark",
   theme: {
     colors: {
-      /*       primaryLight: "#D8C69Cff",
-      primaryLightHover: "#C4B48Fff",
-      primaryLightActive: "#B0A282ff",
-      primaryLightContrast: "#9C8F75ff",
-      primary: "#884D88ff",
-      primaryBorder: "#756B5Bff",
-      primaryBorderHover: "#61594Eff",
-      primarySolidHover: "#4D4641ff",
-      primarySolidContrast: "#393434ff",
-      primaryShadow: "#252227ff", */
+      secondary: "#e0cbf5",
     }, // optional
   },
 });

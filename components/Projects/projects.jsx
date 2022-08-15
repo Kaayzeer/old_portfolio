@@ -20,7 +20,7 @@ const {
 
 export default function Projects({ repos }) {
   const is2Xl = useMediaQuery(1400);
-  const isLg = useMediaQuery(1068);
+  const isLg = useMediaQuery(1100);
   const isMd = useMediaQuery(835);
 
   const {
@@ -40,7 +40,7 @@ export default function Projects({ repos }) {
         alignItems="center"
         justify="center"
         css={{
-          height: "100vh",
+          minHeight: "100vh",
           padding: `0 ${is2Xl ? "10%" : "20%"} `,
           fontFamily: "Lato",
         }}
@@ -51,7 +51,7 @@ export default function Projects({ repos }) {
             position: "relative",
           }}
         >
-          {!isLg && (
+          {isLg && (
             <div
               style={{
                 position: "absolute",
@@ -62,7 +62,7 @@ export default function Projects({ repos }) {
                 src={"/images/bannerpic2.svg"}
                 height={!isLg ? 700 : 600}
                 width={!isLg ? 900 : 700}
-                alt="Landing Image"
+                alt="project image"
               />
             </div>
           )}
@@ -70,23 +70,40 @@ export default function Projects({ repos }) {
           <Text h1 size={`${!isLg ? "3.6em" : "2.7em"} `}>
             {title}
           </Text>
-          {/*   <Text h3 size={`${!isLg ? "2em" : "1.5em"} `}>
-            {subTitle}
-          </Text>  */}
         </Col>
         <Grid.Container gap={3} css={{ marginTop: "auto" }}>
           {repositories.map((repo, idx) => (
-            <Grid key={idx} xs={12} sm={idx - 2 ? 6 : 12} xl={4}>
+            <Grid key={idx} xs={12} sm={4} xl={4}>
               <Card
                 isHoverable={true}
-                css={{ backgroundColor: colors.purple300.value }}
+                css={{
+                  backgroundColor: colors.purple300.value,
+                  padding: "0rem 2.5rem",
+                  minHeight: "180px",
+                }}
               >
                 <Card.Body>
                   <Text h3 size="1.2rem" display="flex" align="center">
                     {repo}
                   </Text>
-
-                  <Text h4 size=".8rem">
+                  <hr
+                    style={{
+                      height: "1px",
+                      width: "100%",
+                      background:
+                        "radial-gradient(circle, rgba(255,255,255,0.35) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,0.35) 100%)",
+                    }}
+                  />
+                  <Text
+                    h4
+                    size=".8rem"
+                    css={{
+                      textAlign: "justify",
+                      lineHeight: "1.4rem",
+                      cursor: "pointer",
+                      letterSpacing: ".7px",
+                    }}
+                  >
                     {description[idx]}
                   </Text>
                 </Card.Body>

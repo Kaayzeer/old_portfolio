@@ -23,9 +23,10 @@ export default function Banner() {
   const isMd = useMediaQuery(835);
 
   const {
+    isDark,
     theme: { colors },
   } = useTheme();
-
+  console.log(colors);
   return (
     <>
       <Container
@@ -47,14 +48,20 @@ export default function Banner() {
             <Text h3 size={`${!isLg ? "2em" : "1.5em"} `}>
               {subTitle}
             </Text>
-            <Spacer y={2} />
+            <Spacer y={1} />
 
             <Button
+              bordered
+              size="lg"
+              color="secondary"
               css={{
-                backgroundColor: colors.red400.value,
+                /* backgroundColor: colors.purple300.value, */
                 color: colors.gray900.value,
+                padding: "30px 0",
+                fontWeight: 700,
+                textTransform: "uppercase",
+                letterSpacing: ".7px",
               }}
-              size="md"
             >
               Get in touch
             </Button>
