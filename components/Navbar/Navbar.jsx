@@ -35,13 +35,22 @@ export default function Navbar() {
       style={{ backgroundColor: colors.neutralLight.value }}
     >
       <nav className={styles.nav}>
-        <Image
-          className={styles.img}
-          src="/images/logotest1.svg"
-          height={40}
-          width={40}
-          objectFit="cover"
-        />
+        {!isDark ? (
+          <Image
+            className={styles.img}
+            src="/images/nikolasBlackLogo.png"
+            height={50}
+            width={100}
+          />
+        ) : (
+          <Image
+            className={styles.img}
+            src="/images/nikolasWhiteLogo.png"
+            height={50}
+            width={100}
+          />
+        )}
+
         {/*  The current theme is: {type} */}
         <GiHamburgerMenu
           className={styles.hamburger}
@@ -51,8 +60,8 @@ export default function Navbar() {
           <div className={styles.menu}>
             <p>aloooo</p>
             <Switch
-              checked={true}
-              size="xl"
+              checked={isDark}
+              size="xs"
               iconOff={<SunIcon filled />}
               iconOn={<MoonIcon filled />}
               onChange={(e) => setTheme(e.target.checked ? "dark" : "light")}

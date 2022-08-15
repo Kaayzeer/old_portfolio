@@ -52,7 +52,7 @@ export default function Banner() {
             <Button
               css={{
                 backgroundColor: colors.red400.value,
-                color: colors.gray800.value,
+                color: colors.gray900.value,
               }}
               size="md"
             >

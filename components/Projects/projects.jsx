@@ -42,6 +42,7 @@ export default function Projects({ repos }) {
         css={{
           height: "100vh",
           padding: `0 ${is2Xl ? "10%" : "20%"} `,
+          fontFamily: "Lato",
         }}
       >
         <Col

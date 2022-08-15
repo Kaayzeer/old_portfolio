@@ -25,7 +25,7 @@ const Layout = ({ children, title, keywords, description }) => {
       <Container
         xl
         responsive
-        css={{ backgroundColor: theme?.colors.gray50.value }}
+        css={{ backgroundColor: theme?.colors.gray200.value }}
       >
         <Navbar />
         {children}
