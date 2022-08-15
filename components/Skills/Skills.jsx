@@ -11,8 +11,8 @@ import {
   useTheme,
 } from "@nextui-org/react";
 //userData
-import { data } from "../../data/";
-const { skills } = data;
+import { userData } from "../../data/";
+const { skills } = userData;
 //material ui
 import Avatar from "@mui/material/Avatar";
 //hooks

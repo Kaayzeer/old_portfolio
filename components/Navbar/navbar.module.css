@@ -2,8 +2,7 @@
   /*  background-color: rgba(158, 148, 148, 0.566); */
   height: 80px;
   width: 100%;
-  position: sticky;
-  top: -2px;
+  position: fixed;
   z-index: 999;
 }
 

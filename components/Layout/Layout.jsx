@@ -14,7 +14,7 @@ import Navbar from "../Navbar/Navbar";
 
 const Layout = ({ children, title, keywords, description }) => {
   const { theme } = useTheme();
-  console.log(theme);
+
   return (
     <>
       <Head>

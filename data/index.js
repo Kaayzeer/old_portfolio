@@ -1,6 +1,6 @@
 import React from "react";
 
-export const data = {
+export const userData = {
   title: "Nikolas Rosinelli",
   subTitle: "Web Developer",
   landing: {
@@ -31,7 +31,7 @@ export const data = {
     ],
   },
   skills: {
-    title: "language skills",
+    title: "languages & toolkit",
     languages: [
       {
         language: "Javascript",
@@ -93,14 +93,22 @@ export const data = {
   },
   projects: {
     title: "Projects",
-    baseURI: "https://api.github.com/repos/kaayzeer/",
-    repositories: [
-      "Genrealize",
-      "Portfolio",
-      "cosmicom",
-      "Discord-Google-Drive-Bot",
-      "GitHits",
-      "1DBM",
+    baseURI: "https://api.github.com/users/kaayzeer/repos",
+    repositories: ["Cities-App", "Next Venture", "Scuf"],
+    languages: [
+      {
+        NextVenture: [
+          "Typescript",
+          "Next.js",
+          "Firebase",
+          "Tailwind.css",
+          "Postman",
+          "Node.js",
+          "Stripe.js",
+        ],
+        SCUF: ["Typescript", "React", "Firebase", "Css-modules"],
+        CitiesApp: ["Typescript", "React-Native"],
+      },
     ],
   },
   experience: {

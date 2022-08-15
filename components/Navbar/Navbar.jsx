@@ -3,6 +3,10 @@ import React, { useState } from "react";
 //styles
 import styles from "./navbar.module.css";
 
+//next icons
+import { SunIcon } from "./SunIcon";
+import { MoonIcon } from "./MoonIcon";
+
 //react icons
 import { GiHamburgerMenu } from "react-icons/gi";
 
@@ -19,12 +23,16 @@ export default function Navbar() {
   };
 
   const { setTheme } = useNextTheme();
-  const { isDark, theme } = useTheme();
+  const {
+    isDark,
+    theme: { colors },
+  } = useTheme();
 
+  console.log(colors);
   return (
     <header
       className={styles.header}
-      style={{ backgroundColor: theme?.colors.gray300.value }}
+      style={{ backgroundColor: colors.neutralLight.value }}
     >
       <nav className={styles.nav}>
         <Image
@@ -43,7 +51,10 @@ export default function Navbar() {
           <div className={styles.menu}>
             <p>aloooo</p>
             <Switch
-              checked={isDark}
+              checked={true}
+              size="xl"
+              iconOff={<SunIcon filled />}
+              iconOn={<MoonIcon filled />}
               onChange={(e) => setTheme(e.target.checked ? "dark" : "light")}
             />
           </div>

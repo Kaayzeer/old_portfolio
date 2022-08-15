@@ -14,13 +14,17 @@ import {
 //hooks
 import { useMediaQuery } from "../../hooks/useMediaQuery";
 //userData
-import { data } from "../../data/";
-const { title, subTitle } = data;
+import { userData } from "../../data/";
+const { title, subTitle } = userData;
 
 export default function Banner() {
   const is2Xl = useMediaQuery(1400);
   const isLg = useMediaQuery(1068);
   const isMd = useMediaQuery(835);
+
+  const {
+    theme: { colors },
+  } = useTheme();
 
   return (
     <>
@@ -45,7 +49,13 @@ export default function Banner() {
             </Text>
             <Spacer y={2} />
 
-            <Button color="secondary" size="md">
+            <Button
+              css={{
+                backgroundColor: colors.red400.value,
+                color: colors.gray800.value,
+              }}
+              size="md"
+            >
               Get in touch
             </Button>
           </Col>
