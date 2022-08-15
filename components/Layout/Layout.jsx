@@ -14,7 +14,7 @@ import Navbar from "../Navbar/Navbar";
 
 const Layout = ({ children, title, keywords, description }) => {
   const { theme } = useTheme();
-
+  console.log(theme);
   return (
     <>
       <Head>
@@ -25,14 +25,11 @@ const Layout = ({ children, title, keywords, description }) => {
       <Container
         xl
         responsive
-        className={styles.section}
         css={{ backgroundColor: theme?.colors.gray50.value }}
       >
-        <div className={styles.border}>
-          <Navbar />
-          {children}
-          {/*       <Footer /> */}
-        </div>
+        <Navbar />
+        {children}
+        {/*       <Footer /> */}
       </Container>
     </>
   );

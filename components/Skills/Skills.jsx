@@ -22,11 +22,13 @@ import { firstLetterToUpperCase } from "../../functions/reusable";
 //react
 import React from "react";
 //iconArray
-import { iconArray } from "./iconArray";
+import { iconArray } from "../../lib/iconArray";
 //components
 import Layout from "../Layout/Layout";
 
 export default function Skills() {
+  const is2Xl = useMediaQuery(1400);
+
   const isLg = useMediaQuery(1068);
   const isMd = useMediaQuery(835);
 
@@ -37,26 +39,37 @@ export default function Skills() {
   return (
     <>
       <Container
-        md
+        xl
         responsive
-        css={{ height: "100vh", backgroundColor: theme?.colors.gray50.value }}
+        display="flex"
+        alignItems="center"
+        justify="center"
+        css={{
+          height: "100vh",
+          padding: `0 ${is2Xl ? "10%" : "20%"} `,
+          backgroundColor: theme.colors.purple300.value,
+        }}
       >
         <Spacer y={5} />
         <Row justify="center" align="center">
-          <Image
-            src={"/images/device.svg"}
-            height={400}
-            width={1000}
-            alt="Skills Image"
-          />
+          {!isMd && (
+            <Image
+              src={"/images/device.svg"}
+              height={!isLg ? 400 : 200}
+              width={!isLg ? 1000 : 700}
+              alt="Skills Image"
+            />
+          )}
 
           <Col css={{ marginBottom: "auto" }} align="center">
-            <Text h1>{firstLetterToUpperCase(skills.title)}</Text>
+            <Text h2 size={`${!isLg ? "3.0em" : "2em"} `}>
+              {firstLetterToUpperCase(skills.title)}
+            </Text>
             <Row
               justify="center"
               align="center"
               wrap="wrap"
-              css={{ maxWidth: "50%" }}
+              css={{ maxWidth: ` ${is2Xl ? "100%" : "80%"}` }}
             >
               {color.map((color, idx) => {
                 if (idx > 13) return;
@@ -77,7 +90,7 @@ export default function Skills() {
           </Col>
         </Row>
 
-        <Spacer y={2} />
+        {<Spacer y={2} />}
       </Container>
     </>
   );

@@ -92,6 +92,7 @@ export const data = {
     ],
   },
   projects: {
+    title: "Projects",
     baseURI: "https://api.github.com/repos/kaayzeer/",
     repositories: [
       "Genrealize",

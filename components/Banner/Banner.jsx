@@ -17,30 +17,27 @@ import { useMediaQuery } from "../../hooks/useMediaQuery";
 import { data } from "../../data/";
 const { title, subTitle } = data;
 
-//components
-import Layout from "../Layout/Layout";
-
 export default function Banner() {
+  const is2Xl = useMediaQuery(1400);
   const isLg = useMediaQuery(1068);
   const isMd = useMediaQuery(835);
-
-  const { theme } = useTheme();
 
   return (
     <>
       <Container
-        md
+        xl
         responsive
         display="flex"
         alignItems="center"
-        css={{ height: "100vh" }}
+        justify="center"
+        css={{
+          height: "100vh",
+          padding: `0 ${is2Xl ? "10%" : "20%"} `,
+        }}
       >
         <Row justify="center" align="center">
-          <Col
-            /*  css={{ justifyContent: "flex-start" }} */
-            align={`${!isMd ? "start" : "center"}`}
-          >
-            <Text h1 size={`${!isLg ? "4em" : "3em"} `}>
+          <Col align={`${!isMd ? "start" : "center"}`}>
+            <Text h1 size={`${!isLg ? "3.6em" : "2.7em"} `}>
               {title}
             </Text>
             <Text h3 size={`${!isLg ? "2em" : "1.5em"} `}>
@@ -55,8 +52,8 @@ export default function Banner() {
           {!isMd && (
             <Image
               src={"/images/developer.svg"}
-              height={!isLg ? 800 : 700}
-              width={!isLg ? 1000 : 800}
+              height={!isLg ? 700 : 600}
+              width={!isLg ? 900 : 700}
               alt="Landing Image"
             />
           )}
