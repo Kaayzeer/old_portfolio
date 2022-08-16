@@ -8,6 +8,7 @@ import {
   Image,
   useTheme,
   styled,
+  Popover,
 } from "@nextui-org/react";
 //userData
 import { userData } from "../../data/";
@@ -27,14 +28,16 @@ export default function Skills() {
   const is2Xl = useMediaQuery(1400);
   const isLg = useMediaQuery(1068);
   const isMd = useMediaQuery(835);
-  const { theme } = useTheme();
+  const {
+    theme: { colors },
+  } = useTheme();
 
   let color = skills.languages.map((item) => item.color);
-
+  let language = skills.languages.map((item) => item.language);
   //custom themes
   const StyledContainer = styled(Container, {
     /* height: "100vh", */
-    backgroundColor: theme.colors.purple300.value,
+    backgroundColor: colors.purple300.value,
   });
 
   const StyledCol = styled(Col, {
@@ -84,12 +87,27 @@ export default function Skills() {
                 const Icon = iconArray[idx];
 
                 return (
-                  <StyledAvatar
-                    key={idx}
-                    sx={{ bgcolor: color, margin: "0px 3px" }}
-                  >
-                    {Icon}
-                  </StyledAvatar>
+                  <Popover placement="top">
+                    <Popover.Trigger>
+                      <StyledAvatar
+                        key={idx}
+                        sx={{
+                          bgcolor: color,
+                          margin: "10px",
+                          cursor: "pointer",
+                        }}
+                      >
+                        {Icon}
+                      </StyledAvatar>
+                    </Popover.Trigger>
+                    <Popover.Content
+                      css={{ backgroundColor: colors.gray100.value }}
+                    >
+                      <Text css={{ p: "$6", letterSpacing: ".7px" }}>
+                        {language[idx]}
+                      </Text>
+                    </Popover.Content>
+                  </Popover>
                 );
               })}
             </StyledRow>

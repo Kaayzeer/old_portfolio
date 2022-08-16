@@ -54,7 +54,7 @@ export const userData = {
         color: "#f45734",
       },
       {
-        language: "Nextdotjs",
+        language: "Next.js",
         color: "#2d2d2d",
       },
       {
@@ -82,7 +82,7 @@ export const userData = {
         color: "#2d2d2d",
       },
       {
-        language: "Tailwindcss",
+        language: "Tailwind.css",
         color: "#6fa3ed",
       },
       {

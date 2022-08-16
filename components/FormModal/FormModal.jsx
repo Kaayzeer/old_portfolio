@@ -1,5 +1,13 @@
 import React from "react";
-import { Modal, Input, Row, Checkbox, Button, Text } from "@nextui-org/react";
+import {
+  Modal,
+  Input,
+  Col,
+  Button,
+  Text,
+  Textarea,
+  Spacer,
+} from "@nextui-org/react";
 
 export default function FormModal({ setVisible, visible }) {
   const closeModal = () => {
@@ -17,12 +25,14 @@ export default function FormModal({ setVisible, visible }) {
         onClose={closeModal}
       >
         <Modal.Header>
-          <Text id="modal-title" siza={18}>
-            Welcome to
-            <Text b sieze={18}>
-              NextUi
+          <Col>
+            <Text weight="bold" h4 id="modal-title" siza={18}>
+              Feel free to
             </Text>
-          </Text>
+            <Text b h6 sieze={18}>
+              Contact me :)
+            </Text>
+          </Col>
         </Modal.Header>
         <Modal.Body>
           <Input
@@ -48,6 +58,12 @@ export default function FormModal({ setVisible, visible }) {
             color="secondary"
             size="lg"
             placeholder="Phone"
+          />
+          <Spacer y={1} />
+          <Textarea
+            labelPlaceholder="Type something else?..."
+            status="secondary"
+            minRows={2}
           />
         </Modal.Body>
         <Modal.Footer>
