@@ -15,11 +15,11 @@ import {
 //hooks
 import { useMediaQuery } from "../../hooks/useMediaQuery";
 //userData
-import { userData } from "../../data/";
+import { userData } from "../../data";
 
 const { title, subTitle } = userData;
 
-export default function Banner() {
+export default function Landing({ openModal }) {
   const is2Xl = useMediaQuery(1400);
   const isLg = useMediaQuery(1068);
   const isMd = useMediaQuery(835);
@@ -33,7 +33,7 @@ export default function Banner() {
   //customStyles
 
   const StyledContainer = styled(Container, {
-    height: "100vh",
+    /* height: "100vh", */
     /* padding: `0 ${is2Xl ? "10%" : "20%"} `, */
   });
 
@@ -55,7 +55,7 @@ export default function Banner() {
         alignItems="center"
         justify="center"
         css={{
-          padding: `0 ${is2Xl ? "10%" : "20%"} `,
+          padding: `  ${isLg ? "30%" : "10%"}  ${is2Xl ? "10%" : "20%"} `,
         }}
       >
         <Row justify="center" align="center">
@@ -68,7 +68,14 @@ export default function Banner() {
             </Text>
             <Spacer y={1} />
 
-            <StyledButton bordered light shadow size="lg" color="secondary">
+            <StyledButton
+              bordered
+              light
+              shadow
+              size="lg"
+              color="secondary"
+              onClick={openModal}
+            >
               Get in touch
             </StyledButton>
           </Col>

@@ -1,6 +1,6 @@
+import React, { useState } from "react";
 //components
-import Layout from "../components/Layout/Layout";
-import Banner from "../components/Banner/Banner.jsx";
+import Landing from "../components/Landing/Landing.jsx";
 import Skills from "../components/Skills/Skills.jsx";
 import Projects from "../components/Projects/Projects.jsx";
 
@@ -9,6 +9,7 @@ import { Spacer } from "@nextui-org/react";
 
 //userData
 import { userData } from "../data/index";
+import FormModal from "../components/FormModal/FormModal.jsx";
 const {
   projects: { baseURI },
 } = userData;
@@ -22,12 +23,16 @@ export async function getStaticProps() {
 }
 
 export default function Home({ repos }) {
+  const [visible, setVisible] = useState(false);
+
+  const openModal = () => setVisible(true);
   return (
-    <Layout title="Nikolas Rosinelli Portfolio">
-      <Banner />
+    <>
+      <Landing openModal={openModal} />
       <Skills />
       <Projects repos={repos} />
+      {visible && <FormModal setVisible={setVisible} visible={visible} />}
       <Spacer y={3} />
-    </Layout>
+    </>
   );
 }

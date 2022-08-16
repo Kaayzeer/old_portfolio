@@ -33,7 +33,7 @@ export default function Skills() {
 
   //custom themes
   const StyledContainer = styled(Container, {
-    height: "100vh",
+    /* height: "100vh", */
     backgroundColor: theme.colors.purple300.value,
   });
 
@@ -60,7 +60,7 @@ export default function Skills() {
         alignItems="center"
         justify="center"
         css={{
-          padding: `0 ${is2Xl ? "10%" : "20%"} `,
+          padding: `  ${isLg ? "20%" : "10%"}  ${is2Xl ? "10%" : "20%"} `,
         }}
       >
         <Spacer y={5} />

@@ -23,7 +23,7 @@ import { useMediaQuery } from "../../hooks/useMediaQuery";
 import { userData } from "../../data";
 //destructuring userData
 const {
-  projects: { title, repositories, languages, images },
+  projects: { title, repositories, languages, images, thisURI },
 } = userData;
 
 export default function Projects({ repos }) {
@@ -67,7 +67,7 @@ export default function Projects({ repos }) {
 
   console.log(repoDemo);
 
-  //card buttongroup
+  //card buttongroup click
   const handleClick = (e, idx) => {
     const openDemo = window.open(repoDemo[idx], "_blank");
     const openRepo = window.open(repoUrl[idx], "_blank");
@@ -124,10 +124,20 @@ export default function Projects({ repos }) {
         display="flex"
         alignItems="center"
         justify="center"
-        css={{ padding: `10% ${is2Xl ? "10%" : "20%"} ` }}
+        css={{
+          padding: `  ${isLg ? "20%" : "10%"}  ${is2Xl ? "10%" : "20%"} `,
+        }}
       >
         <Col align={`${!isMd ? "center" : "center"}`}>
-          <Text h1 size={`${!isLg ? "3.6em" : "2.7em"} `}>
+          <Text
+            h1
+            size={`${!isLg ? "3.6em" : "2.7em"} `}
+            weight="bold"
+            onClick={() => window.open(thisURI, "_blank")}
+            css={{
+              cursor: "pointer",
+            }}
+          >
             {title}
           </Text>
         </Col>
