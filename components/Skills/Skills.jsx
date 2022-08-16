@@ -4,11 +4,10 @@ import {
   Col,
   Row,
   Text,
-  Button,
   Spacer,
   Image,
-  User,
   useTheme,
+  styled,
 } from "@nextui-org/react";
 //userData
 import { userData } from "../../data/";
@@ -23,31 +22,45 @@ import { firstLetterToUpperCase } from "../../functions/reusable";
 import React from "react";
 //iconArray
 import { iconArray } from "../../lib/iconArray";
-//components
-import Layout from "../Layout/Layout";
 
 export default function Skills() {
   const is2Xl = useMediaQuery(1400);
-
   const isLg = useMediaQuery(1068);
   const isMd = useMediaQuery(835);
-
-  let color = skills.languages.map((item, idx) => item.color);
-
   const { theme } = useTheme();
+
+  let color = skills.languages.map((item) => item.color);
+
+  //custom themes
+  const StyledContainer = styled(Container, {
+    height: "100vh",
+    backgroundColor: theme.colors.purple300.value,
+  });
+
+  const StyledCol = styled(Col, {
+    marginBottom: "auto",
+  });
+
+  const StyledRow = styled(Row, {
+    marginBottom: "auto",
+    maxWidth: ` ${is2Xl ? "100%" : "80%"}`,
+  });
+
+  const StyledAvatar = styled(Avatar, {
+    marginTop: "1rem",
+  });
+  //-------------------//
 
   return (
     <>
-      <Container
+      <StyledContainer
         xl
         responsive
         display="flex"
         alignItems="center"
         justify="center"
         css={{
-          height: "100vh",
           padding: `0 ${is2Xl ? "10%" : "20%"} `,
-          backgroundColor: theme.colors.purple300.value,
         }}
       >
         <Spacer y={5} />
@@ -61,37 +74,30 @@ export default function Skills() {
             />
           )}
 
-          <Col css={{ marginBottom: "auto" }} align="center">
+          <StyledCol align="center">
             <Text h2 size={`${!isLg ? "3.0em" : "2em"} `}>
               {firstLetterToUpperCase(skills.title)}
             </Text>
-            <Row
-              justify="center"
-              align="center"
-              wrap="wrap"
-              css={{ maxWidth: ` ${is2Xl ? "100%" : "80%"}` }}
-            >
+            <StyledRow justify="center" align="center" wrap="wrap">
               {color.map((color, idx) => {
                 if (idx > 13) return;
                 const Icon = iconArray[idx];
 
                 return (
-                  <Avatar
+                  <StyledAvatar
                     key={idx}
                     sx={{ bgcolor: color, margin: "0px 3px" }}
-                    /* variant="rounded" */
-                    style={{ marginTop: "10px" }}
                   >
                     {Icon}
-                  </Avatar>
+                  </StyledAvatar>
                 );
               })}
-            </Row>
-          </Col>
+            </StyledRow>
+          </StyledCol>
         </Row>
 
         {<Spacer y={2} />}
-      </Container>
+      </StyledContainer>
     </>
   );
 }

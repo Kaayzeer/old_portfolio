@@ -92,9 +92,14 @@ export const userData = {
     ],
   },
   projects: {
-    title: "Projects",
+    title: "Portfolio",
     baseURI: "https://api.github.com/users/kaayzeer/repos",
     repositories: ["Cities-App", "Next Venture", "Scuf"],
+    images: [
+      "/images/citiesFront.png",
+      "/images/nextVentureFront.png",
+      "/images/scufFront.png",
+    ],
     languages: [
       {
         NextVenture: [

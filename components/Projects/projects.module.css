@@ -1,0 +1,13 @@
+.hr {
+  height: 1px;
+  width: 100%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.35) 0%,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(255, 255, 255, 0.35) 100%
+  );
+}
+
+.hr:hover {
+}

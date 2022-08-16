@@ -22,7 +22,7 @@ export default function Navbar() {
     setIsOpen((prev) => (!prev ? true : false));
   };
 
-  const { setTheme } = useNextTheme();
+  const { setTheme, forcedTheme } = useNextTheme();
   const {
     isDark,
     theme: { colors },
@@ -51,7 +51,6 @@ export default function Navbar() {
           />
         )}
 
-        {/*  The current theme is: {type} */}
         <GiHamburgerMenu
           className={styles.hamburger}
           onClick={(e) => handleOpenMenu(e)}
@@ -62,9 +61,13 @@ export default function Navbar() {
             <Switch
               checked={isDark}
               size="xs"
-              iconOff={<SunIcon filled />}
               iconOn={<MoonIcon filled />}
-              onChange={(e) => setTheme(e.target.checked ? "dark" : "light")}
+              iconOff={<SunIcon filled />}
+              onChange={(e) =>
+                setTheme((prevEvent) =>
+                  prevEvent !== true && e.target.checked ? "dark" : "light"
+                )
+              }
             />
           </div>
         )}
@@ -72,3 +75,8 @@ export default function Navbar() {
     </header>
   );
 }
+
+/* setTheme((prev) => {
+                  if (prev === isDark)
+                    return e.target.checked ? "dark" : "light";
+                }) */
