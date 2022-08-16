@@ -9,7 +9,7 @@ import { Spacer } from "@nextui-org/react";
 
 //userData
 import { userData } from "../data/index";
-import FormModal from "../components/FormModal/FormModal.jsx";
+
 const {
   projects: { baseURI },
 } = userData;
@@ -23,15 +23,14 @@ export async function getStaticProps() {
 }
 
 export default function Home({ repos }) {
-  const [visible, setVisible] = useState(false);
-
-  const openModal = () => setVisible(true);
   return (
     <>
-      <Landing openModal={openModal} />
-      <Skills />
-      <Projects repos={repos} />
-      {visible && <FormModal setVisible={setVisible} visible={visible} />}
+      <>
+        <Landing />
+        <Skills />
+        <Projects repos={repos} />
+      </>
+
       <Spacer y={3} />
     </>
   );

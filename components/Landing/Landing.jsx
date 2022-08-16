@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 //next
 import Image from "next/image";
 //nextUI
@@ -14,15 +14,24 @@ import {
 } from "@nextui-org/react";
 //hooks
 import { useMediaQuery } from "../../hooks/useMediaQuery";
+//components
+import FormModal from "../FormModal/FormModal";
 //userData
 import { userData } from "../../data";
 
 const { title, subTitle } = userData;
 
-export default function Landing({ openModal }) {
+export default function Landing() {
   const is2Xl = useMediaQuery(1400);
   const isLg = useMediaQuery(1068);
   const isMd = useMediaQuery(835);
+
+  //modal toggler
+  const [visible, setVisible] = useState(false);
+  const openModal = () => setVisible(true);
+  const closeModal = () => {
+    setVisible(false);
+  };
 
   const {
     isDark,
@@ -48,6 +57,7 @@ export default function Landing({ openModal }) {
   /* ----------------------- */
   return (
     <>
+      <FormModal closeModal={closeModal} visible={visible} />
       <StyledContainer
         xl
         responsive
@@ -70,11 +80,11 @@ export default function Landing({ openModal }) {
 
             <StyledButton
               bordered
-              light
+              ghost
               shadow
               size="lg"
               color="secondary"
-              onClick={openModal}
+              onPress={openModal}
             >
               Get in touch
             </StyledButton>

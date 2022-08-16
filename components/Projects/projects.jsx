@@ -65,7 +65,7 @@ export default function Projects({ repos }) {
         repo.includes("cities-app")
     );
 
-  console.log(repoDemo);
+  /*   console.log(repoDemo); */
 
   //card buttongroup click
   const handleClick = (e, idx) => {

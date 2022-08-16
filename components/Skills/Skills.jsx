@@ -1,3 +1,6 @@
+//react
+import React, { useState } from "react";
+
 //nextUi
 import {
   Container,
@@ -19,12 +22,14 @@ import Avatar from "@mui/material/Avatar";
 import { useMediaQuery } from "../../hooks/useMediaQuery";
 //functions
 import { firstLetterToUpperCase } from "../../functions/reusable";
-//react
-import React from "react";
+
 //iconArray
 import { iconArray } from "../../lib/iconArray";
 
 export default function Skills() {
+  //toggle language avatar popover
+  const [popoverIsOpen, setPopoverIsOpen] = useState(false);
+
   const is2Xl = useMediaQuery(1400);
   const isLg = useMediaQuery(1068);
   const isMd = useMediaQuery(835);
@@ -32,8 +37,10 @@ export default function Skills() {
     theme: { colors },
   } = useTheme();
 
+  //filter skills
   let color = skills.languages.map((item) => item.color);
   let language = skills.languages.map((item) => item.language);
+
   //custom themes
   const StyledContainer = styled(Container, {
     /* height: "100vh", */
@@ -46,7 +53,7 @@ export default function Skills() {
 
   const StyledRow = styled(Row, {
     marginBottom: "auto",
-    maxWidth: ` ${is2Xl ? "100%" : "80%"}`,
+    maxWidth: is2Xl ? "100%" : "80%",
   });
 
   const StyledAvatar = styled(Avatar, {
@@ -87,10 +94,13 @@ export default function Skills() {
                 const Icon = iconArray[idx];
 
                 return (
-                  <Popover placement="top">
+                  <Popover key={idx} placement="top">
                     <Popover.Trigger>
                       <StyledAvatar
-                        key={idx}
+                        value={popoverIsOpen}
+                        onClick={() =>
+                          setPopoverIsOpen((prev) => (prev ? true : false))
+                        }
                         sx={{
                           bgcolor: color,
                           margin: "10px",

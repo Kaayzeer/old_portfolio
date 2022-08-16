@@ -12,23 +12,32 @@ import { GiHamburgerMenu } from "react-icons/gi";
 
 //nextUI
 import { useTheme as useNextTheme } from "next-themes";
-import { Switch, useTheme, Image } from "@nextui-org/react";
+import { Switch, useTheme, Image, styled, Link } from "@nextui-org/react";
+//hooks
+import { useMediaQuery } from "../../hooks/useMediaQuery";
+
+const navbarInfo = [
+  { section: "Home", href: "#home" },
+  { section: "Skills", href: "#skills" },
+  { section: "Portfolio", href: "#portfolio" },
+  { section: "Contact", href: "#contact" },
+];
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const isMd = useMediaQuery(835);
 
   //Hamburger menu opener
   const handleOpenMenu = () => {
     setIsOpen((prev) => (!prev ? true : false));
   };
 
-  const { setTheme, forcedTheme } = useNextTheme();
+  const { setTheme } = useNextTheme();
   const {
     isDark,
     theme: { colors },
   } = useTheme();
 
-  console.log(colors);
   return (
     <header
       className={styles.header}
@@ -50,11 +59,25 @@ export default function Navbar() {
             width={100}
           />
         )}
-
-        <GiHamburgerMenu
-          className={styles.hamburger}
-          onClick={(e) => handleOpenMenu(e)}
-        />
+        {/*  <div className={styled.linksContainer}> */}
+        {!isMd &&
+          navbarInfo.map((info, idx) => (
+            <Link
+              key={idx}
+              href={info.href}
+              color="black"
+              className={styles.link}
+            >
+              {info.section}
+            </Link>
+          ))}
+        {/*    </div> */}
+        {isMd && (
+          <GiHamburgerMenu
+            className={styles.hamburger}
+            onClick={(e) => handleOpenMenu(e)}
+          />
+        )}
         {isOpen && (
           <div className={styles.menu}>
             <p>aloooo</p>
