@@ -12,7 +12,7 @@ import styles from "../../styles/Home.module.css";
 //components
 import Navbar from "../Navbar/Navbar";
 
-const Layout = ({ children, title, keywords, description }) => {
+const Layout = ({ children, title, keywords, description, contactRef }) => {
   const { theme } = useTheme();
 
   return (
@@ -27,7 +27,7 @@ const Layout = ({ children, title, keywords, description }) => {
         responsive
         css={{ backgroundColor: theme?.colors.gray200.value }}
       >
-        <Navbar />
+        <Navbar contactRef={contactRef} />
         {children}
         {/*       <Footer /> */}
       </Container>

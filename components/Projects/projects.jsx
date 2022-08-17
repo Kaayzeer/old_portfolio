@@ -16,11 +16,14 @@ import {
   Spacer,
   styled,
   Button,
+  Tooltip,
 } from "@nextui-org/react";
 //hooks
 import { useMediaQuery } from "../../hooks/useMediaQuery";
 //userData
 import { userData } from "../../data";
+//components
+import RepoLink from "./RepoLink";
 //destructuring userData
 const {
   projects: { title, repositories, languages, images, thisURI },
@@ -65,15 +68,12 @@ export default function Projects({ repos }) {
         repo.includes("cities-app")
     );
 
-  /*   console.log(repoDemo); */
+  console.log({ repos });
 
   //card buttongroup click
   const handleClick = (e, idx) => {
-    const openDemo = window.open(repoDemo[idx], "_blank");
-    const openRepo = window.open(repoUrl[idx], "_blank");
-
-    if (e.target.name === "demo") openDemo;
-    if (e.target.name === "repo") openRepo;
+    if (e.target.name === "demo") window.open(repoDemo[idx], "_blank");
+    if (e.target.name === "repo") window.open(repoUrl[idx], "_blank");
   };
 
   // ----------------------------//
@@ -119,6 +119,7 @@ export default function Projects({ repos }) {
   return (
     <>
       <StyledContainer
+        id="portfolio"
         xl
         responsive
         display="flex"
@@ -129,17 +130,18 @@ export default function Projects({ repos }) {
         }}
       >
         <Col align={`${!isMd ? "center" : "center"}`}>
-          <Text
-            h1
-            size={`${!isLg ? "3.6em" : "2.7em"} `}
-            weight="bold"
-            onClick={() => window.open(thisURI, "_blank")}
-            css={{
-              cursor: "pointer",
-            }}
-          >
-            {title}
-          </Text>
+          <Tooltip content={<RepoLink />}>
+            <Text
+              h1
+              size={`${!isLg ? "3.6em" : "2.7em"} `}
+              weight="bold"
+              css={{
+                cursor: "pointer",
+              }}
+            >
+              {title}
+            </Text>
+          </Tooltip>
         </Col>
         <Grid.Container gap={3}>
           {repositories.map((repo, idx) => (

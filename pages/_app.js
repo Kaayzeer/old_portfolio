@@ -1,5 +1,4 @@
 import "../styles/globals.css";
-import Layout from "../components/Layout/Layout";
 
 // 1. import `NextUIProvider` component
 import { createTheme, NextUIProvider } from "@nextui-org/react";
@@ -46,9 +45,7 @@ function MyApp({ Component, pageProps }) {
       }}
     >
       <NextUIProvider>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
+        <Component {...pageProps} />
       </NextUIProvider>
     </NextThemesProvider>
   );

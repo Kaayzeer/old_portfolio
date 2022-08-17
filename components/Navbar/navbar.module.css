@@ -33,7 +33,12 @@
 }
 
 .link:hover {
+  transition: all 0.3s ease;
   text-shadow: 0 0 0.01px black;
+}
+
+.link:active {
+  transition: 3s all ease;
 }
 
 .img {

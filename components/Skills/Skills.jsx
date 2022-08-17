@@ -12,6 +12,7 @@ import {
   useTheme,
   styled,
   Popover,
+  Tooltip,
 } from "@nextui-org/react";
 //userData
 import { userData } from "../../data/";
@@ -22,7 +23,8 @@ import Avatar from "@mui/material/Avatar";
 import { useMediaQuery } from "../../hooks/useMediaQuery";
 //functions
 import { firstLetterToUpperCase } from "../../functions/reusable";
-
+/* //framer-motion
+import { motion } from "framer-motion"; */
 //iconArray
 import { iconArray } from "../../lib/iconArray";
 
@@ -64,6 +66,7 @@ export default function Skills() {
   return (
     <>
       <StyledContainer
+        id="skills"
         xl
         responsive
         display="flex"
@@ -88,36 +91,28 @@ export default function Skills() {
             <Text h2 size={`${!isLg ? "3.0em" : "2em"} `}>
               {firstLetterToUpperCase(skills.title)}
             </Text>
+
             <StyledRow justify="center" align="center" wrap="wrap">
               {color.map((color, idx) => {
                 if (idx > 13) return;
                 const Icon = iconArray[idx];
 
                 return (
-                  <Popover key={idx} placement="top">
-                    <Popover.Trigger>
-                      <StyledAvatar
-                        value={popoverIsOpen}
-                        onClick={() =>
-                          setPopoverIsOpen((prev) => (prev ? true : false))
-                        }
-                        sx={{
-                          bgcolor: color,
-                          margin: "10px",
-                          cursor: "pointer",
-                        }}
-                      >
-                        {Icon}
-                      </StyledAvatar>
-                    </Popover.Trigger>
-                    <Popover.Content
-                      css={{ backgroundColor: colors.gray100.value }}
+                  <Tooltip key={idx} content={language[idx]} color="invert">
+                    <StyledAvatar
+                      value={popoverIsOpen}
+                      onClick={() =>
+                        setPopoverIsOpen((prev) => (prev ? true : false))
+                      }
+                      sx={{
+                        bgcolor: color,
+                        margin: "10px",
+                        cursor: "pointer",
+                      }}
                     >
-                      <Text css={{ p: "$6", letterSpacing: ".7px" }}>
-                        {language[idx]}
-                      </Text>
-                    </Popover.Content>
-                  </Popover>
+                      {Icon}
+                    </StyledAvatar>
+                  </Tooltip>
                 );
               })}
             </StyledRow>

@@ -21,7 +21,7 @@ import { userData } from "../../data";
 
 const { title, subTitle } = userData;
 
-export default function Landing() {
+export default function Landing({ contactRef }) {
   const is2Xl = useMediaQuery(1400);
   const isLg = useMediaQuery(1068);
   const isMd = useMediaQuery(835);
@@ -59,6 +59,7 @@ export default function Landing() {
     <>
       <FormModal closeModal={closeModal} visible={visible} />
       <StyledContainer
+        id="home"
         xl
         responsive
         display="flex"
@@ -84,7 +85,9 @@ export default function Landing() {
               shadow
               size="lg"
               color="secondary"
+              /*  id="contact" */
               onPress={openModal}
+              /* ref={contactRef} */
             >
               Get in touch
             </StyledButton>
