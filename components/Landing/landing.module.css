@@ -1,0 +1,160 @@
+.h1 {
+  color: #333;
+  font-family: tahoma;
+
+  font-weight: 100;
+  line-height: 1.5;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+  height: 2rem;
+}
+.subContainer {
+  color: #333;
+  font-weight: 900;
+  overflow-y: hidden;
+  position: absolute;
+  top: 0.2rem;
+  left: 0;
+  animation: openclose 5s ease-in-out infinite;
+}
+
+@media screen and (max-width: 600px) {
+  .subContainer {
+    animation: opencloseMobile 5s ease-in-out infinite;
+    left: -50px;
+  }
+}
+
+.sub {
+  font-family: tahoma;
+}
+
+@keyframes openclose {
+  0% {
+    top: -0.1rem;
+    width: 0;
+  }
+  5% {
+    width: 0;
+  }
+  15% {
+    width: 1000px;
+  }
+  30% {
+    top: -0.1rem;
+    width: 1000px;
+  }
+  33% {
+    top: -0.1rem;
+    width: 0;
+  }
+  35% {
+    top: -0.1rem;
+    width: 0;
+  }
+  38% {
+    top: -2.3rem;
+  }
+  48% {
+    top: -2.3rem;
+    width: 1000px;
+  }
+  62% {
+    top: -2.3rem;
+    width: 1000px;
+  }
+  66% {
+    top: -2.5rem;
+    width: 0;
+    text-indent: 0;
+  }
+  71% {
+    top: -4.5rem;
+    width: 0;
+    text-indent: 5px;
+  }
+  86% {
+    top: -4.5rem;
+    width: 1000px;
+  }
+  95% {
+    top: -4.5rem;
+    width: 285px;
+  }
+  98% {
+    top: -4.5rem;
+    width: 0;
+    text-indent: 5px;
+  }
+  100% {
+    top: 0;
+    width: 0;
+    text-indent: 0;
+  }
+}
+
+@keyframes opencloseMobile {
+  0% {
+    top: 0rem;
+    width: 0;
+  }
+  5% {
+    width: 0;
+  }
+  15% {
+    width: 500px;
+  }
+  30% {
+    top: 0rem;
+    width: 500px;
+  }
+  33% {
+    top: 0rem;
+    width: 0;
+  }
+  35% {
+    top: 0rem;
+    width: 0;
+  }
+  38% {
+    top: -1.45rem;
+  }
+  48% {
+    top: -1.45rem;
+    width: 500px;
+  }
+  62% {
+    top: -1.45rem;
+    width: 500px;
+  }
+  66% {
+    top: -2.3rem;
+    width: 0;
+    text-indent: 0;
+  }
+  71% {
+    top: -3rem;
+    width: 0;
+    text-indent: 5px;
+  }
+  86% {
+    top: -3rem;
+    width: 500px;
+  }
+  95% {
+    top: -3rem;
+    width: 500px;
+  }
+  98% {
+    top: -3rem;
+    width: 0;
+    text-indent: 5px;
+  }
+  100% {
+    top: 0;
+    width: 0;
+    text-indent: 0;
+  }
+}

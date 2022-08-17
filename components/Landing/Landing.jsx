@@ -1,4 +1,8 @@
 import React, { useState } from "react";
+
+//styles
+import styles from "./landing.module.css";
+
 //next
 import Image from "next/image";
 //nextUI
@@ -19,7 +23,9 @@ import FormModal from "../FormModal/FormModal";
 //userData
 import { userData } from "../../data";
 
-const { title, subTitle } = userData;
+const {
+  landing: { title, subtitles, paragraph },
+} = userData;
 
 export default function Landing({ contactRef }) {
   const is2Xl = useMediaQuery(1400);
@@ -44,6 +50,18 @@ export default function Landing({ contactRef }) {
   const StyledContainer = styled(Container, {
     /* height: "100vh", */
     /* padding: `0 ${is2Xl ? "10%" : "20%"} `, */
+  });
+
+  const StyledH1 = styled(Text, {
+    color: "#333",
+
+    fontSize: "3rem",
+    fontWeight: "100",
+    lineHeight: "1.5",
+    whiteSpace: "nowrap",
+    overflow: "hidden",
+    position: "relative",
+    width: "550px",
   });
 
   const StyledButton = styled(Button, {
@@ -71,12 +89,25 @@ export default function Landing({ contactRef }) {
       >
         <Row justify="center" align="center">
           <Col align={`${!isMd ? "start" : "center"}`}>
-            <Text h1 size={`${!isLg ? "3.6em" : "2.7em"} `}>
+            <Text h3 size={`${!isLg ? "2em" : "1.5em"} `}>
               {title}
             </Text>
-            <Text h3 size={`${!isLg ? "2em" : "1.5em"} `}>
-              {subTitle}
-            </Text>
+            <h1 className={styles.h1}>
+              <div className={!isMd ? styles.subContainer : null}>
+                {subtitles.map((subTitle, idx) => (
+                  <div
+                    key={idx}
+                    className={styles.sub}
+                    style={{
+                      fontSize: !isMd ? "1.5rem" : "1.1rem",
+                      letterSpacing: !isMd ? "0" : "1px",
+                    }}
+                  >
+                    {!isMd ? subTitle : paragraph}
+                  </div>
+                ))}
+              </div>
+            </h1>
             <Spacer y={1} />
 
             <StyledButton

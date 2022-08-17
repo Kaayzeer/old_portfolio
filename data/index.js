@@ -2,14 +2,12 @@ import React from "react";
 
 export const userData = {
   title: "Nikolas Rosinelli",
-  subTitle: "Web Developer",
   landing: {
     title: "Hi, I'm Nikolas",
+    paragraph: "Web Developer",
     subtitles: [
-      "Frontend developer 🌐",
       "Cross-platform developer 📱💻",
-      "Exploring the whole JS ecosystem ☁️",
-      "Beginner in backend ♾️",
+      "Exploring the JS ecosystem ♾️",
       "Just getting started 📈",
     ],
     professionalDetails: [
@@ -88,6 +86,10 @@ export const userData = {
       {
         language: "Stripe",
         color: "#6472f5",
+      },
+      {
+        language: "React-Native",
+        color: "#2d2d2d",
       },
     ],
   },

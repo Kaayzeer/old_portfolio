@@ -81,7 +81,7 @@ export default function Navbar(
           navbarInfo.map((info, idx) => (
             <Link
               key={idx}
-              to={info.href}
+              to={info.href !== "contact" && info.href}
               spy={true}
               smooth={true}
               offset={-80}

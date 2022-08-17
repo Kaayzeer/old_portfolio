@@ -94,7 +94,7 @@ export default function Skills() {
 
             <StyledRow justify="center" align="center" wrap="wrap">
               {color.map((color, idx) => {
-                if (idx > 13) return;
+                if (idx > 14) return;
                 const Icon = iconArray[idx];
 
                 return (

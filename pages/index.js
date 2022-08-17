@@ -3,8 +3,8 @@ import React, { useState, useRef } from "react";
 import Landing from "../components/Landing/Landing.jsx";
 import Skills from "../components/Skills/Skills.jsx";
 import Projects from "../components/Projects/Projects.jsx";
-import Layout from "../components/Layout/Layout.jsx";
 import Navbar from "../components/Navbar/Navbar.jsx";
+import Contact from "../components/Contact/Contact.jsx";
 
 //nextUI
 import { Spacer, Container, useTheme } from "@nextui-org/react";
@@ -39,8 +39,7 @@ export default function Home({ repos }) {
         <Landing /* contactRef={contactRef} */ />
         <Skills />
         <Projects repos={repos} />
-
-        <Spacer y={3} />
+        {/*  <Contact /> */}
       </Container>
     </>
   );
