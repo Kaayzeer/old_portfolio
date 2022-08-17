@@ -1,8 +1,4 @@
 .h1 {
-  color: #333;
-  font-family: tahoma;
-
-  font-weight: 100;
   line-height: 1.5;
   text-transform: uppercase;
   white-space: nowrap;
@@ -11,7 +7,7 @@
   height: 2rem;
 }
 .subContainer {
-  color: #333;
+  color: rgb(67, 65, 65);
   font-weight: 900;
   overflow-y: hidden;
   position: absolute;
@@ -23,7 +19,7 @@
 @media screen and (max-width: 600px) {
   .subContainer {
     animation: opencloseMobile 5s ease-in-out infinite;
-    left: -50px;
+    /* left: -50px; */
   }
 }
 

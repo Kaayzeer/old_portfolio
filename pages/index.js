@@ -4,7 +4,7 @@ import Landing from "../components/Landing/Landing.jsx";
 import Skills from "../components/Skills/Skills.jsx";
 import Projects from "../components/Projects/Projects.jsx";
 import Navbar from "../components/Navbar/Navbar.jsx";
-import Contact from "../components/Contact/Contact.jsx";
+import Sidebar from "../components/Sidebar/Sidebar.jsx";
 
 //nextUI
 import { Spacer, Container, useTheme } from "@nextui-org/react";
@@ -39,6 +39,7 @@ export default function Home({ repos }) {
         <Landing /* contactRef={contactRef} */ />
         <Skills />
         <Projects repos={repos} />
+        <Sidebar />
         {/*  <Contact /> */}
       </Container>
     </>

@@ -103,7 +103,8 @@ export default function Landing({ contactRef }) {
                       letterSpacing: !isMd ? "0" : "1px",
                     }}
                   >
-                    {!isMd ? subTitle : paragraph}
+                    {subTitle}
+                    {/* {!isMd ? subTitle : paragraph} */}
                   </div>
                 ))}
               </div>

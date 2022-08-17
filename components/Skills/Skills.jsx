@@ -106,7 +106,7 @@ export default function Skills() {
                       }
                       sx={{
                         bgcolor: color,
-                        margin: "10px",
+                        margin: "1rem",
                         cursor: "pointer",
                       }}
                     >

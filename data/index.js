@@ -10,24 +10,37 @@ export const userData = {
       "Exploring the JS ecosystem ♾️",
       "Just getting started 📈",
     ],
-    professionalDetails: [
-      {
-        alt: "linkedin_pic",
-        icon: "linkedin",
-        link: "https://www.linkedin.com/in/nikolas-r-553198216/",
-      },
-      {
-        alt: "github_pic",
-        icon: "github",
-        link: "https://github.com/kaayzeer",
-      },
-      {
-        alt: "email_pic",
-        icon: "gmail",
-        link: "mailto:nmrb60@gmail.com",
-      },
-    ],
   },
+  sidebar: [
+    {
+      alt: "github_pic",
+      icon: "github",
+      link: "https://github.com/kaayzeer",
+      color: "#2d2d2d79",
+      hovered: "#2d2d2d",
+    },
+    {
+      alt: "linkedin_pic",
+      icon: "linkedin",
+      link: "https://www.linkedin.com/in/nikolas-r-553198216/",
+      color: "#70cbf276",
+      hovered: "#70cbf2",
+    },
+    {
+      alt: "discord_pic",
+      icon: "discord",
+      link: "mailto:nmrb60@discord.com",
+      color: "#ad94e76f",
+      hovered: "#ad94e7",
+    },
+    {
+      alt: "email_pic",
+      icon: "gmail",
+      link: "mailto:nmrb60@gmail.com",
+      color: "#f4573470",
+      hovered: "#f45734",
+    },
+  ],
   skills: {
     title: "languages & toolkit",
     languages: [
