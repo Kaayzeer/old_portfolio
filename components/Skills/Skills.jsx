@@ -1,6 +1,3 @@
-//react
-import React, { useState } from "react";
-
 //nextUi
 import {
   Container,
@@ -11,27 +8,21 @@ import {
   Image,
   useTheme,
   styled,
-  Popover,
   Tooltip,
 } from "@nextui-org/react";
-//userData
-import { userData } from "../../data/";
-const { skills } = userData;
-//material ui
-import Avatar from "@mui/material/Avatar";
 //hooks
 import { useMediaQuery } from "../../hooks/useMediaQuery";
 //functions
 import { firstLetterToUpperCase } from "../../functions/reusable";
-/* //framer-motion
-import { motion } from "framer-motion"; */
 //iconArray
 import { iconArray } from "../../lib/iconArray";
+//components
+import StyledAvatar from "./StyledAvatar";
+//userData
+import { userData } from "../../data/";
+const { skills } = userData;
 
 export default function Skills() {
-  //toggle language avatar popover
-  const [popoverIsOpen, setPopoverIsOpen] = useState(false);
-
   const is2Xl = useMediaQuery(1400);
   const isLg = useMediaQuery(1068);
   const isMd = useMediaQuery(835);
@@ -45,7 +36,6 @@ export default function Skills() {
 
   //custom themes
   const StyledContainer = styled(Container, {
-    /* height: "100vh", */
     backgroundColor: colors.purple300.value,
   });
 
@@ -58,9 +48,6 @@ export default function Skills() {
     maxWidth: is2Xl ? "100%" : "80%",
   });
 
-  const StyledAvatar = styled(Avatar, {
-    marginTop: "1rem",
-  });
   //-------------------//
 
   return (
@@ -99,19 +86,7 @@ export default function Skills() {
 
                 return (
                   <Tooltip key={idx} content={language[idx]} color="invert">
-                    <StyledAvatar
-                      value={popoverIsOpen}
-                      onClick={() =>
-                        setPopoverIsOpen((prev) => (prev ? true : false))
-                      }
-                      sx={{
-                        bgcolor: color,
-                        margin: "1rem",
-                        cursor: "pointer",
-                      }}
-                    >
-                      {Icon}
-                    </StyledAvatar>
+                    <StyledAvatar color={color} Icon={Icon} />
                   </Tooltip>
                 );
               })}

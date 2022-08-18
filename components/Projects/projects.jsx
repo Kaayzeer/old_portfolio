@@ -1,39 +1,35 @@
 import React from "react";
 //styles
 import styles from "./projects.module.css";
-
-//next
-import { useRouter } from "next/router";
-
 //nextUI
 import {
   Container,
   Col,
-  Card,
   Grid,
-  Text,
   useTheme,
-  Spacer,
   styled,
-  Button,
   Tooltip,
+  Card,
+  Text,
+  Spacer,
+  Button,
 } from "@nextui-org/react";
 //hooks
 import { useMediaQuery } from "../../hooks/useMediaQuery";
-//userData
-import { userData } from "../../data";
 //components
 import RepoLink from "./RepoLink";
+//userData
+import { userData } from "../../data";
+
 //destructuring userData
 const {
-  projects: { title, repositories, languages, images, thisURI },
+  projects: { title, repositories, images, languages },
 } = userData;
 
 export default function Projects({ repos }) {
   const is2Xl = useMediaQuery(1400);
   const isLg = useMediaQuery(1100);
   const isMd = useMediaQuery(835);
-  const router = useRouter();
 
   const {
     theme: { colors },
@@ -59,16 +55,14 @@ export default function Projects({ repos }) {
   //filter repo Demos
   const repoDemo = repos.map((repo) => repo.homepage).filter((repo) => repo);
 
-  const repoName = repos
+  /*   const repoName = repos
     .map((repo) => repo.name)
     .filter(
       (repo) =>
         repo.includes("scuf") ||
         repo.includes("nv_vercel") ||
         repo.includes("cities-app")
-    );
-
-  console.log({ repos });
+    ); */
 
   //card buttongroup click
   const handleClick = (e, idx) => {
