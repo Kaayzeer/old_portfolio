@@ -16,7 +16,8 @@ export const userData = {
       alt: "github_pic",
       icon: "github",
       link: "https://github.com/kaayzeer",
-      color: "#2d2d2db9",
+      color: "#2d2d2d",
+      color1: "#2d2d2db9",
       hovered: "#2d2d2d",
     },
     {

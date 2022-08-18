@@ -1,7 +1,7 @@
 .header {
   height: 80px;
   width: 100%;
-  position: sticky;
+  position: absolute;
   top: 0;
   left: 0;
   z-index: 999;
@@ -20,7 +20,7 @@
 }
 
 .link {
-  margin-left: 10%;
+  /* margin-left: 10%; */
   font-weight: 600;
 }
 
@@ -66,12 +66,12 @@
   gap: 3rem;
   color: rgb(188, 187, 187);
   /*   transition: all 2s ease-in-out;
-  transform: translate(-100%); */
+  transform: translateX(-100%); */
 }
 
-.showMenu {
-  /* transform: translate(0); */
-}
+/* .showMenu {
+  transform: translateX(0);
+} */
 
 .close {
   position: absolute;

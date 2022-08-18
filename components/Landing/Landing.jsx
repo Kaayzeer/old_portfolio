@@ -57,7 +57,6 @@ export default function Landing({ contactRef }) {
 
   const StyledH1 = styled(Text, {
     color: "#333",
-
     fontSize: "3rem",
     fontWeight: "100",
     lineHeight: "1.5",
@@ -87,7 +86,7 @@ export default function Landing({ contactRef }) {
         alignItems="center"
         justify="center"
         css={{
-          padding: `  ${isLg ? "30%" : "10%"}  ${is2Xl ? "10%" : "20%"} `,
+          padding: `   ${isLg ? "30%" : "10%"}  ${is2Xl ? "10%" : "20%"} `,
         }}
       >
         <Row justify="center" align="center">

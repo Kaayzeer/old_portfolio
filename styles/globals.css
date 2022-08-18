@@ -30,8 +30,6 @@ a {
   );
   height: 100vh;
   width: 100vw;
-  /* border-radius: 8px; */
-  /* padding: 10px 30px; */
   z-index: 2;
   display: flex;
   flex-direction: column;
@@ -39,12 +37,12 @@ a {
   justify-content: center;
   gap: 3rem;
   color: rgb(188, 187, 187);
-  /*   transition: all 2s ease-in-out;
-  transform: translate(-100%); */
+  transition: all 2s ease-in-out;
+  transform: translateX(-100%);
 }
 
 .showMenu {
-  /* transform: translate(0); */
+  transform: translateX(0%);
 }
 
 .nextui-c-fdHeMm-iBYCdx-css {
@@ -68,5 +66,9 @@ a {
 }
 
 .nextui-c-fdHeMm-ilgTLoC-css {
+  padding: 0;
+}
+
+.nextui-c-fdHeMm-ibrkIep-css {
   padding: 0;
 }

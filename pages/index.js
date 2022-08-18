@@ -16,18 +16,14 @@ const {
   projects: { baseURI },
 } = userData;
 
-/* export async function getStaticProps() {
+export async function getStaticProps() {
   const res = await fetch(baseURI);
   const data = await res.json();
 
   return { props: { repos: data } };
 }
- */
-export default function Home(
-  {
-    /*  repos  */
-  }
-) {
+
+export default function Home({ repos }) {
   const { theme } = useTheme();
   /*   const contactRef = useRef(); */
 
@@ -36,13 +32,16 @@ export default function Home(
       <Container
         xl
         responsive
-        css={{ backgroundColor: theme?.colors.gray200.value }}
+        css={{
+          backgroundColor: theme?.colors.gray200.value,
+          position: "relative",
+        }}
       >
         <Navbar /* contactRef={contactRef}  */ />
 
         <Landing /* contactRef={contactRef} */ />
         <Skills />
-        {/* <Projects repos={repos} /> */}
+        <Projects repos={repos} />
         <Sidebar />
         {/*  <Contact /> */}
       </Container>

@@ -12,7 +12,7 @@ import { Link } from "react-scroll";
 //functions
 import { SocialAvatars } from "../Sidebar/Sidebar";
 //framer-motion
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 //nextUI
 import { useTheme as useNextTheme } from "next-themes";
 import { Switch, useTheme, Image } from "@nextui-org/react";
@@ -52,6 +52,7 @@ export default function Navbar(
   }
 ) {
   const [isOpen, setIsOpen] = useState(false);
+
   const isMd = useMediaQuery(835);
 
   //Hamburger menu opener
@@ -145,42 +146,44 @@ export default function Navbar(
             onClick={(e) => handleOpenMenu(e)}
           />
         )}
-        {isOpen && (
-          <>
-            <GrClose
-              className={styles.close}
-              onClick={(e) => handleOpenMenu(e)}
-            />
+        <AnimatePresence exitBeforeEnter={true}>
+          {isOpen && (
+            <>
+              <GrClose
+                className={styles.close}
+                onClick={(e) => handleOpenMenu(e)}
+              />
+              <motion.div
+                initial={{ x: "100vw" }}
+                animate={{ x: 0 }}
+                exit={{ x: "100vw" }}
+                transition={{ duration: 0.6, ease: "easeInOut" }}
+                className={styles.menu}
+              >
+                {navbarInfo.map((info, idx) => (
+                  <Link
+                    key={idx}
+                    to={info.href !== "contact" && info.href}
+                    spy={true}
+                    smooth={true}
+                    offset={-80}
+                    duration={500}
+                    className={styles.link}
+                    onClick={(e) => handleOpenMenu(e)}
+                  >
+                    {info.section}
+                  </Link>
+                ))}
 
-            <motion.div
-              initial={{ x: "100vw" }}
-              animate={{ x: 0 }}
-              transition={{ duration: 0.5 }}
-              className={styles.menu}
-            >
-              {navbarInfo.map((info, idx) => (
-                <Link
-                  key={idx}
-                  to={info.href !== "contact" && info.href}
-                  spy={true}
-                  smooth={true}
-                  offset={-80}
-                  duration={500}
-                  className={styles.link}
-                  onClick={(e) => handleOpenMenu(e)}
-                >
-                  {info.section}
-                </Link>
-              ))}
+                {themeToggler(isDark, setTheme)}
 
-              {themeToggler(isDark, setTheme)}
-
-              <div className={styles.socialContainer}>
-                {SocialAvatars(sidebar)}
-              </div>
-            </motion.div>
-          </>
-        )}
+                <div className={styles.socialContainer}>
+                  {SocialAvatars(sidebar)}
+                </div>
+              </motion.div>
+            </>
+          )}
+        </AnimatePresence>
       </nav>
     </header>
   );
