@@ -3,6 +3,9 @@ import React, { useState } from "react";
 //styles
 import styles from "./landing.module.css";
 
+//framer-motion
+import { motion } from "framer-motion";
+
 //next
 import Image from "next/image";
 //nextUI

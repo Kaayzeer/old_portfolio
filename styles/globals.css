@@ -39,12 +39,12 @@ a {
   justify-content: center;
   gap: 3rem;
   color: rgb(188, 187, 187);
-  transition: all 2s ease-in-out;
-  transform: translate(-100%);
+  /*   transition: all 2s ease-in-out;
+  transform: translate(-100%); */
 }
 
 .showMenu {
-  transform: translate(0);
+  /* transform: translate(0); */
 }
 
 .nextui-c-fdHeMm-iBYCdx-css {
