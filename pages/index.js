@@ -16,14 +16,18 @@ const {
   projects: { baseURI },
 } = userData;
 
-export async function getStaticProps() {
+/* export async function getStaticProps() {
   const res = await fetch(baseURI);
   const data = await res.json();
 
   return { props: { repos: data } };
 }
-
-export default function Home({ repos }) {
+ */
+export default function Home(
+  {
+    /*  repos  */
+  }
+) {
   const { theme } = useTheme();
   /*   const contactRef = useRef(); */
 
@@ -38,7 +42,7 @@ export default function Home({ repos }) {
 
         <Landing /* contactRef={contactRef} */ />
         <Skills />
-        <Projects repos={repos} />
+        {/* <Projects repos={repos} /> */}
         <Sidebar />
         {/*  <Contact /> */}
       </Container>

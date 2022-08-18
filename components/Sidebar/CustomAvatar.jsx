@@ -15,7 +15,7 @@ const CustomAvatar = ({ social, Icon }) => {
         bgcolor: social.color,
         margin: "10px",
         cursor: "pointer",
-
+        zIndex: "2",
         "&:hover": {
           bgColor: social.hovered,
           transition: "all 4s eaase",

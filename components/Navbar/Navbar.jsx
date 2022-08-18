@@ -9,15 +9,22 @@ import { MoonIcon } from "./MoonIcon";
 
 //react icons
 import { GiHamburgerMenu } from "react-icons/gi";
+import { GrClose } from "react-icons/gr";
 
 //react-scroll
 import { Link } from "react-scroll";
+
+//functions
+import { SocialAvatars } from "../Sidebar/Sidebar";
 
 //nextUI
 import { useTheme as useNextTheme } from "next-themes";
 import { Switch, useTheme, Image, styled, Button } from "@nextui-org/react";
 //hooks
 import { useMediaQuery } from "../../hooks/useMediaQuery";
+//userData
+import { userData } from "../../data";
+const { sidebar } = userData;
 
 const navbarInfo = [
   { section: "Home", href: "home" },
@@ -100,20 +107,43 @@ export default function Navbar(
           />
         )}
         {isOpen && (
-          <div className={styles.menu}>
-            <p>aloooo</p>
-            <Switch
-              checked={isDark}
-              size="xs"
-              iconOn={<MoonIcon filled />}
-              iconOff={<SunIcon filled />}
-              onChange={(e) =>
-                setTheme((prevEvent) =>
-                  prevEvent !== true && e.target.checked ? "dark" : "light"
-                )
-              }
+          <>
+            <GrClose
+              className={styles.close}
+              onClick={(e) => handleOpenMenu(e)}
             />
-          </div>
+            <div className={isOpen ? "menu && showMenu" : "showMenu"}>
+              {navbarInfo.map((info, idx) => (
+                <Link
+                  key={idx}
+                  to={info.href !== "contact" && info.href}
+                  spy={true}
+                  smooth={true}
+                  offset={-80}
+                  duration={500}
+                  className={styles.link}
+                  onClick={(e) => handleOpenMenu(e)}
+                >
+                  {info.section}
+                </Link>
+              ))}
+              <Switch
+                checked={isDark}
+                size="xs"
+                iconOn={<MoonIcon filled />}
+                iconOff={<SunIcon filled />}
+                onChange={(e) =>
+                  setTheme((prevEvent) =>
+                    prevEvent !== true && e.target.checked ? "dark" : "light"
+                  )
+                }
+              />
+              {/* check .atSidebar in navbar.module.css for styling */}
+              <div className={styles.socialContainer}>
+                {SocialAvatars(sidebar)}
+              </div>
+            </div>
+          </>
         )}
       </nav>
     </header>
