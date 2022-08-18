@@ -49,7 +49,9 @@ export default function SkillsAvatars({ repo, idx, repos, is2Xl, images }) {
   //filter repo descriptions
   const description = repos
     .map((repo) => repo.description)
-    .filter((repo) => repo !== null);
+    .filter((repo) => repo !== null && !repo.includes("Creating"));
+
+  console.log(description);
 
   //filter repoURL´s
   const repoUrl = repos

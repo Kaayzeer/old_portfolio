@@ -5,6 +5,7 @@ html,
 body {
   padding: 0;
   margin: 0;
+  width: 100vw;
   height: 100vh;
   font-family: "Poppins", sans-serif;
 }
@@ -70,5 +71,9 @@ a {
 }
 
 .nextui-c-fdHeMm-ibrkIep-css {
+  padding: 0;
+}
+
+.nextui-c-fdHeMm-iiCcfFu-css {
   padding: 0;
 }

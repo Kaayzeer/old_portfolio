@@ -10,7 +10,7 @@ import SkillsAvatars from "./SkillsAvatars";
 
 //destructuring userData
 const {
-  projects: { title, repositories, images, languages },
+  projects: { title, repositories, images, languages, thisURI },
 } = userData;
 
 export default function Projects({ repos }) {
@@ -33,7 +33,7 @@ export default function Projects({ repos }) {
         }}
       >
         <Col align={`${!isMd ? "center" : "center"}`}>
-          <Tooltip content={<RepoLink />}>
+          <Tooltip content={<RepoLink thisURI={thisURI} />}>
             <Text
               h1
               size={`${!isLg ? "3.6em" : "2.7em"} `}
