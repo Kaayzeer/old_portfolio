@@ -18,25 +18,29 @@ import { useMediaQuery } from "../../hooks/useMediaQuery";
 
 export default function FormModal({ closeModal, visible }) {
   const isXs = useMediaQuery(500);
-  const {
-    value: emailValue,
-    reset: emailReset,
-    bindings: emailBindings,
-  } = useInput("");
+
   const {
     value: nameValue,
     reset: nameReset,
     bindings: nameBindings,
   } = useInput("");
 
+  const {
+    value: emailValue,
+    reset: emailReset,
+    bindings: emailBindings,
+  } = useInput("");
+
+  const {
+    value: phoneValue,
+    reset: phoneReset,
+    bindings: phoneBindings,
+  } = useInput("");
+
+  // email validation -----------------------
   const validateEmail = (value) => {
     return value.match(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}$/i);
   };
-
-  const validateFullName = (value) => {
-    return value.match(/^[a-zA-Z]+ [a-zA-Z]+$/);
-  };
-
   const emailHelper = useMemo(() => {
     if (!emailValue)
       return {
@@ -52,6 +56,10 @@ export default function FormModal({ closeModal, visible }) {
     };
   }, [emailValue]);
 
+  // name validation ------------------------
+  const validateFullName = (value) => {
+    return value.match(/^[a-zA-Z]+ [a-zA-Z]+$/);
+  };
   const nameHelper = useMemo(() => {
     if (!nameValue)
       return {
@@ -63,10 +71,29 @@ export default function FormModal({ closeModal, visible }) {
 
     return {
       nameText: isValidFullName ? "Correct name" : "Enter a valid name",
-
       nameColor: isValidFullName ? "success" : "error",
     };
   }, [nameValue]);
+
+  // phone validation ---------------------
+  const validatePhone = (value) => {
+    return value.match(/^\+?\d{1,4}\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/);
+  };
+
+  const phoneHelper = useMemo(() => {
+    if (!phoneValue)
+      return {
+        text: "",
+        color: "",
+      };
+
+    const isValidPhone = validatePhone(phoneValue);
+
+    return {
+      phoneText: isValidPhone ? "Correct phone" : "Enter a valid phone",
+      phoneColor: isValidPhone ? "success" : "error",
+    };
+  }, [phoneValue]);
 
   return (
     <motion.div>
@@ -101,7 +128,8 @@ export default function FormModal({ closeModal, visible }) {
             fullWidth
             color="secondary"
             size="lg"
-            labelPlaceholder="Full Name"
+            labelLeft="Name"
+            placeholder="ex. John Doe"
             aria-label="name"
             type="text"
           />
@@ -117,20 +145,27 @@ export default function FormModal({ closeModal, visible }) {
             fullWidth
             color="secondary"
             size="lg"
-            labelPlaceholder="Email"
-            aria-label="enter your name"
+            labelLeft="Email"
+            placeholder="ex. apple@gmail.com"
+            aria-label="enter your email"
             type="email"
           />
           <Spacer y={0.5} />
           <Input
+            {...phoneBindings}
             clearable
             bordered
+            onClearClick={phoneReset}
+            status={phoneHelper.phoneColor}
+            helperColor={phoneHelper.phoneColor}
+            helperText={phoneHelper.phoneText}
             fullWidth
             color="secondary"
             size="lg"
-            labelPlaceholder="Phone"
-            aria-label="phone"
-            type="number"
+            labelLeft="Phone"
+            placeholder="ex. +46735693895"
+            aria-label="enter your phone number"
+            type="text"
           />
           <Spacer y={1} />
           <Textarea
