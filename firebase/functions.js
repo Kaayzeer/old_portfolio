@@ -12,4 +12,8 @@ const addDocument = async (doc) => {
     console.log(err.message);
     setError("Failed sending the email");
   }
+
+  return { document, error };
 };
+
+export { addDocument };
