@@ -1,19 +1,29 @@
 import { useState } from "react";
+import { db } from "./firebaseSetup";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 
-const addDocument = async (doc) => {
-  const [document, setDocument] = useState(null);
+export const useNewDocument = () => {
+  const [message, setMessage] = useState("");
   const [error, setError] = useState("");
-  try {
-    const timeCreated = timestamp.fromDate(new Date());
-    const documentAdded = await refType.add({ ...doc, timeCreated });
 
-    setDocument(documentAdded);
-  } catch (err) {
-    console.log(err.message);
-    setError("Failed sending the email");
-  }
+  const addDocument = async (name, email, phone) => {
+    try {
+      setError(null);
+      const addDocument = collection(db, "emails");
 
-  return { document, error };
+      await addDoc(addDocument, {
+        name: name,
+        email: email,
+        phone: phone,
+        created: serverTimestamp(),
+      });
+
+      setMessage("Congratulations, you have now successfully sent your info.");
+    } catch (err) {
+      console.log(err.message);
+      setError("An error ocurred while sending the form information");
+    }
+  };
+
+  return { addDocument, message, error };
 };
-
-export { addDocument };

@@ -1,25 +1,19 @@
 import React, { useMemo } from "react";
 //next ui
-import { Input, useInput } from "@nextui-org/react";
+import { Input } from "@nextui-org/react";
 
-export default function InputFields() {
+export default function InputFields(props) {
   const {
-    value: nameValue,
-    reset: nameReset,
-    bindings: nameBindings,
-  } = useInput("");
-
-  const {
-    value: emailValue,
-    reset: emailReset,
-    bindings: emailBindings,
-  } = useInput("");
-
-  const {
-    value: phoneValue,
-    reset: phoneReset,
-    bindings: phoneBindings,
-  } = useInput("");
+    nameValue,
+    nameReset,
+    nameBindings,
+    emailValue,
+    emailReset,
+    emailBindings,
+    phoneValue,
+    phoneReset,
+    phoneBindings,
+  } = props;
 
   // email validation -----------------------
   const validateEmail = (value) => {
@@ -81,7 +75,6 @@ export default function InputFields() {
 
   return (
     <>
-      {" "}
       <Input
         {...nameBindings}
         clearable
@@ -97,6 +90,7 @@ export default function InputFields() {
         placeholder="John Doe"
         aria-label="name"
         type="text"
+        name="name"
       />
       <Input
         {...emailBindings}
@@ -113,6 +107,7 @@ export default function InputFields() {
         placeholder="apple@gmail.com"
         aria-label="enter your email"
         type="email"
+        name="email"
       />
       <Input
         {...phoneBindings}
@@ -129,6 +124,7 @@ export default function InputFields() {
         placeholder="+46735693895"
         aria-label="enter your phone number"
         type="text"
+        name="phone"
       />
     </>
   );
