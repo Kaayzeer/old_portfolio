@@ -128,12 +128,12 @@ export default function FormModal({ closeModal, visible }) {
             fullWidth
             color="secondary"
             size="lg"
-            labelLeft="Name"
-            placeholder="ex. John Doe"
+            label="Full Name"
+            placeholder="John Doe"
             aria-label="name"
             type="text"
           />
-          <Spacer y={0.5} />
+
           <Input
             {...emailBindings}
             clearable
@@ -145,12 +145,12 @@ export default function FormModal({ closeModal, visible }) {
             fullWidth
             color="secondary"
             size="lg"
-            labelLeft="Email"
-            placeholder="ex. apple@gmail.com"
+            label="Email"
+            placeholder="apple@gmail.com"
             aria-label="enter your email"
             type="email"
           />
-          <Spacer y={0.5} />
+
           <Input
             {...phoneBindings}
             clearable
@@ -162,8 +162,8 @@ export default function FormModal({ closeModal, visible }) {
             fullWidth
             color="secondary"
             size="lg"
-            labelLeft="Phone"
-            placeholder="ex. +46735693895"
+            label="Phone number"
+            placeholder="+46735693895"
             aria-label="enter your phone number"
             type="text"
           />
