@@ -12,7 +12,7 @@ import { Spacer, Container, useTheme } from "@nextui-org/react";
 //userData
 import { userData } from "../data/index";
 
-/* const {
+const {
   projects: { baseURI },
 } = userData;
 
@@ -21,13 +21,9 @@ export async function getStaticProps() {
   const data = await res.json();
 
   return { props: { repos: data } };
-} */
+}
 
-export default function Home(
-  {
-    /*  repos */
-  }
-) {
+export default function Home({ repos }) {
   const { theme } = useTheme();
   /*   const contactRef = useRef(); */
 
@@ -45,7 +41,7 @@ export default function Home(
 
         <Landing /* contactRef={contactRef} */ />
         <Skills />
-        {/* <Projects repos={repos} /> */}
+        <Projects repos={repos} />
         <Sidebar />
         {/*  <Contact /> */}
       </Container>

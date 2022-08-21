@@ -6,7 +6,7 @@ export const useNewDocument = () => {
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
 
-  const addDocument = async (name, email, phone) => {
+  const addDocument = async (name, email, phone, textArea) => {
     try {
       setError(null);
       const addDocument = collection(db, "emails");
@@ -15,6 +15,7 @@ export const useNewDocument = () => {
         name: name,
         email: email,
         phone: phone,
+        textArea: textArea,
         created: serverTimestamp(),
       });
 

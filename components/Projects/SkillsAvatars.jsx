@@ -18,7 +18,7 @@ export default function SkillsAvatars({ repo, idx, repos, is2Xl, images }) {
 
   const StyledCard = styled(Card, {
     backgroundColor: colors.neutralBorder.value,
-    padding: "1rem 2.5rem",
+    padding: "1rem 1.5rem",
     height: !is2Xl ? "400px" : null,
     minHeight: "180px",
     cursor: "pointer",

@@ -22,7 +22,7 @@ export default function FormModal({ closeModal, visible }) {
   const { addDocument, message, error } = useNewDocument();
   const [msg, setMsg] = useState("");
 
-  const isXs = useMediaQuery(500);
+  const isSm = useMediaQuery(500);
   const {
     value: nameValue,
     reset: nameReset,
@@ -71,7 +71,7 @@ export default function FormModal({ closeModal, visible }) {
         aria-labelledby="modal-title"
         open={visible}
         onClose={handleClose}
-        css={{ margin: isXs && "0 20px" }}
+        css={{ margin: isSm && "0 20px" }}
       >
         <>
           {!msg && !error && (
