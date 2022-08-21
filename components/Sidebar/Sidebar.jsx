@@ -13,7 +13,11 @@ import { motion } from "framer-motion";
 const { sidebar } = userData;
 console.log("sidebar:", sidebar);
 
-const iconArray = [<SiGithub />, <SiLinkedin />, <SiDiscord />];
+const iconArray = [
+  <SiGithub key={0} />,
+  <SiLinkedin key={1} />,
+  <SiDiscord key={2} />,
+];
 
 //social media icons reausable
 export const SocialAvatars = (sidebar) => {
