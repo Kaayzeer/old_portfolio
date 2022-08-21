@@ -31,7 +31,6 @@ const Layout = ({ children, title, keywords, description, contactRef }) => {
         <Navbar /* contactRef={contactRef}  */ />
         <Sidebar />
         {children}
-        {/*       <Footer /> */}
       </Container>
     </>
   );

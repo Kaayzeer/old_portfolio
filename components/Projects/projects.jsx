@@ -49,6 +49,7 @@ export default function Projects({ repos }) {
         <Grid.Container gap={3}>
           {repositories.map((repo, idx) => (
             <SkillsAvatars
+              key={idx}
               repo={repo}
               idx={idx}
               repos={repos}

@@ -75,7 +75,7 @@ export default function SkillsAvatars({ repo, idx, repos, is2Xl, images }) {
   // ----------------------------//
 
   return (
-    <Grid key={idx} xs={12} sm={4} xl={4}>
+    <Grid xs={12} sm={4} xl={4}>
       <StyledCard
         isHoverable={true}
         css={{
