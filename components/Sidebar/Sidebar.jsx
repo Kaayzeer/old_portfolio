@@ -11,7 +11,6 @@ import { useMediaQuery } from "../../hooks/useMediaQuery";
 
 import { motion } from "framer-motion";
 const { sidebar } = userData;
-console.log("sidebar:", sidebar);
 
 const iconArray = [
   <SiGithub key={0} />,

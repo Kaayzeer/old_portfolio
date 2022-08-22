@@ -46,7 +46,6 @@ export default function Landing({ contactRef }) {
     isDark,
     theme: { colors },
   } = useTheme();
-  console.log(colors);
 
   //customStyles
 
