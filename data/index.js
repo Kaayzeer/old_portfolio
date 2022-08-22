@@ -30,7 +30,7 @@ export const userData = {
     {
       alt: "discord_pic",
       icon: "discord",
-      link: "mailto:nmrb60@discord.com",
+      link: "https://discordapp.com/users/699968153404309614/",
       color: "#ad94e76f",
       hovered: "#ad94e7",
     },

@@ -1,10 +1,11 @@
 import React from "react";
 //components
+import Navbar from "../components/Navbar/Navbar.jsx";
+import Sidebar from "../components/Sidebar/Sidebar.jsx";
 import Landing from "../components/Landing/Landing.jsx";
 import Skills from "../components/Skills/Skills.jsx";
 import Portfolio from "../components/Portfolio/Portfolio.jsx";
-import Navbar from "../components/Navbar/Navbar.jsx";
-import Sidebar from "../components/Sidebar/Sidebar.jsx";
+import About from "../components/About/About.jsx";
 
 //nextUI
 import { Spacer, Container, useTheme } from "@nextui-org/react";
@@ -41,7 +42,7 @@ export default function Home({ repos }) {
         <Landing />
         <Skills />
         <Portfolio repos={repos} />
-        {/*  <Contact /> */}
+        {/* <About repos={repos} /> */}
       </Container>
     </>
   );

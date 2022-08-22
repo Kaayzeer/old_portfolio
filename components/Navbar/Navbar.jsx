@@ -20,12 +20,12 @@ import { Switch, useTheme, Image } from "@nextui-org/react";
 import { useMediaQuery } from "../../hooks/useMediaQuery";
 //userData
 import { userData } from "../../data";
+import FormModal from "../FormModal/FormModal";
 const { sidebar } = userData;
 const navbarInfo = [
   { section: "Home", href: "home" },
   { section: "Skills", href: "skills" },
   { section: "Portfolio", href: "portfolio" },
-  { section: "Contact", href: "" },
 ];
 
 //ThemeSwitcher reusable

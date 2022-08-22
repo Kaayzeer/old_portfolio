@@ -1,15 +1,14 @@
 //react-icons
 import { SiGithub, SiLinkedin, SiDiscord } from "react-icons/si";
-//userData
-import { userData } from "../../data";
 //styles
 import styles from "./sidebar.module.css";
 //components
 import CustomAvatar from "./CustomAvatar";
 //hooks
 import { useMediaQuery } from "../../hooks/useMediaQuery";
-
 import { motion } from "framer-motion";
+//userData
+import { userData } from "../../data";
 const { sidebar } = userData;
 
 const iconArray = [
