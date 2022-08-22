@@ -15,11 +15,11 @@ import { motion } from "framer-motion";
 import { useMediaQuery } from "../../hooks/useMediaQuery";
 //components
 import InputFields from "./InputFields";
-import { useNewDocument } from "../../firebase/functions";
+import { useNewDocument } from "../../hooks/useNewDocument";
 //functions
 
 export default function FormModal({ closeModal, visible }) {
-  const { addDocument, message, error } = useNewDocument();
+  const { addDocument, message, error, setError } = useNewDocument();
   const [msg, setMsg] = useState("");
 
   const isSm = useMediaQuery(500);
@@ -51,15 +51,15 @@ export default function FormModal({ closeModal, visible }) {
       e.target.phone.value,
       e.target.textArea.value
     );
-    setMsg(message);
-  };
 
-  const handleClose = () => {
-    setMsg("");
     nameReset();
     emailReset();
     phoneReset();
     reset();
+  };
+
+  const handleClose = () => {
+    setError("");
     closeModal();
   };
 
@@ -74,7 +74,7 @@ export default function FormModal({ closeModal, visible }) {
         css={{ margin: isSm && "0 20px" }}
       >
         <>
-          {!msg && !error && (
+          {!message && !error && (
             <Modal.Header>
               <Col align="center">
                 <Text weight="bold" h4 id="modal-title" size={18}>
@@ -86,7 +86,7 @@ export default function FormModal({ closeModal, visible }) {
               </Col>
             </Modal.Header>
           )}
-          {msg && (
+          {message && (
             <Modal.Header>
               <Col align="left">
                 <Text

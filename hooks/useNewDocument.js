@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { db } from "./firebaseSetup";
+import { db } from "../firebase/firebaseSetup";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 
 export const useNewDocument = () => {
@@ -26,5 +26,5 @@ export const useNewDocument = () => {
     }
   };
 
-  return { addDocument, message, error };
+  return { addDocument, message, error, setError };
 };
