@@ -87,6 +87,7 @@ export default function Navbar(
                 src="/images/nikolasBlackLogo.png"
                 height={50}
                 width={100}
+                alt="black-logo"
               />
             </motion.div>
           </Link>
@@ -104,6 +105,7 @@ export default function Navbar(
                 src="/images/nikolasWhiteLogo.png"
                 height={50}
                 width={100}
+                alt="white-logo"
               />
             </motion.div>
           </Link>
