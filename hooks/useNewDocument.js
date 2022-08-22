@@ -26,5 +26,5 @@ export const useNewDocument = () => {
     }
   };
 
-  return { addDocument, message, error, setError };
+  return { addDocument, message, error, setError, setMessage };
 };

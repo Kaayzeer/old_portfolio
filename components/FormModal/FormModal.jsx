@@ -16,11 +16,14 @@ import { useMediaQuery } from "../../hooks/useMediaQuery";
 //components
 import InputFields from "./InputFields";
 import { useNewDocument } from "../../hooks/useNewDocument";
+import { useRouter } from "next/router";
 //functions
 
 export default function FormModal({ closeModal, visible }) {
-  const { addDocument, message, error, setError } = useNewDocument();
+  const { addDocument, message, error, setError, setMessage } =
+    useNewDocument();
   const [msg, setMsg] = useState("");
+  const router = useRouter();
 
   const isSm = useMediaQuery(500);
   const {
@@ -56,10 +59,14 @@ export default function FormModal({ closeModal, visible }) {
     emailReset();
     phoneReset();
     reset();
+    setTimeout(() => {
+      closeModal();
+    }, [3500]);
   };
 
   const handleClose = () => {
     setError("");
+    setMessage("");
     closeModal();
   };
 
@@ -151,7 +158,13 @@ export default function FormModal({ closeModal, visible }) {
               <Button auto bordered color="error" onPress={handleClose}>
                 Close
               </Button>
-              <Button type="submit" auto bordered color="secondary">
+              <Button
+                type="submit"
+                auto
+                bordered
+                color="secondary"
+                disabled={nameValue.length < 1 && true}
+              >
                 Send
               </Button>
             </Modal.Footer>
