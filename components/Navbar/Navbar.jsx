@@ -25,7 +25,7 @@ const navbarInfo = [
   { section: "Home", href: "home" },
   { section: "Skills", href: "skills" },
   { section: "Portfolio", href: "portfolio" },
-  { section: "Contact", href: "contact" },
+  { section: "Contact", href: "" },
 ];
 
 //ThemeSwitcher reusable
@@ -74,13 +74,7 @@ export default function Navbar(
       <nav className={styles.nav}>
         {/* //------------Logo --------------// */}
         {!isDark ? (
-          <Link
-            to={"home"}
-            spy={true}
-            smooth={true}
-            offset={-80}
-            duration={500}
-          >
+          <Link to="home" spy={true} smooth={true} offset={-80} duration={500}>
             <motion.div
               animate={{
                 scale: [1, 1.5, 1.5, 1, 1],
@@ -97,13 +91,7 @@ export default function Navbar(
             </motion.div>
           </Link>
         ) : (
-          <Link
-            to={"home"}
-            spy={true}
-            smooth={true}
-            offset={-80}
-            duration={500}
-          >
+          <Link to="home" spy={true} smooth={true} offset={-80} duration={500}>
             <motion.div
               animate={{
                 scale: [1, 1.5, 1.5, 1, 1],
@@ -126,7 +114,7 @@ export default function Navbar(
             {navbarInfo.map((info, idx) => (
               <Link
                 key={idx}
-                to={info.href !== "contact" && info.href}
+                to={info.href}
                 spy={true}
                 smooth={true}
                 offset={-80}
@@ -146,7 +134,7 @@ export default function Navbar(
             onClick={(e) => handleOpenMenu(e)}
           />
         )}
-        <AnimatePresence exitBeforeEnter={true}>
+        <AnimatePresence mode="wait">
           {isOpen && (
             <>
               <GrClose
