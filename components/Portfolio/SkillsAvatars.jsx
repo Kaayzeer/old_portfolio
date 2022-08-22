@@ -1,5 +1,5 @@
 //styles
-import styles from "./projects.module.css";
+import styles from "./portfolio.module.css";
 //nextUI
 import {
   Grid,

@@ -13,7 +13,7 @@ const {
   projects: { title, repositories, images, languages, thisURI },
 } = userData;
 
-export default function Projects({ repos }) {
+const Portfolio = ({ repos }) => {
   const is2Xl = useMediaQuery(1400);
   const isLg = useMediaQuery(1100);
   const isMd = useMediaQuery(835);
@@ -60,4 +60,6 @@ export default function Projects({ repos }) {
       </Container>
     </>
   );
-}
+};
+
+export default Portfolio;

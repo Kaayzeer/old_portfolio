@@ -1,8 +1,8 @@
-import React, { useState, useRef } from "react";
+import React from "react";
 //components
 import Landing from "../components/Landing/Landing.jsx";
 import Skills from "../components/Skills/Skills.jsx";
-import Projects from "../components/Projects/Projects.jsx";
+import Portfolio from "../components/Portfolio/Portfolio.jsx";
 import Navbar from "../components/Navbar/Navbar.jsx";
 import Sidebar from "../components/Sidebar/Sidebar.jsx";
 
@@ -25,7 +25,6 @@ export async function getStaticProps() {
 
 export default function Home({ repos }) {
   const { theme } = useTheme();
-  /*   const contactRef = useRef(); */
 
   return (
     <>
@@ -37,12 +36,11 @@ export default function Home({ repos }) {
           position: "relative",
         }}
       >
-        <Navbar /* contactRef={contactRef}  */ />
-
-        <Landing /* contactRef={contactRef} */ />
-        <Skills />
-        <Projects repos={repos} />
+        <Navbar />
         <Sidebar />
+        <Landing />
+        <Skills />
+        <Portfolio repos={repos} />
         {/*  <Contact /> */}
       </Container>
     </>
