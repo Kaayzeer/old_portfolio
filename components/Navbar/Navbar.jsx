@@ -93,20 +93,6 @@ export default function Navbar() {
     theme: { colors },
   } = useTheme();
 
-  const StyledLink = styled(Text, {
-    paddingTop: "10px",
-    fontWeight: "600",
-    transition: "all .3s ease",
-
-    "&:hover": {
-      color: colors.neutralSolidHover.value,
-      textShadow: "0 0 0.01px black",
-    },
-
-    "&:active": {
-      transition: "3s all ease",
-    },
-  });
   return (
     <header
       className={showNav ? styles.header : styles.hiddenHeader}
@@ -164,7 +150,7 @@ export default function Navbar() {
                 duration={500}
                 className={styles.link}
               >
-                <StyledLink>{info.section}</StyledLink>
+                {info.section}
               </Link>
             ))}
             {themeToggler(isDark, setTheme)}
