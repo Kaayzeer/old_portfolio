@@ -11,7 +11,7 @@ import {
   Button,
 } from "@nextui-org/react";
 
-export default function SkillsAvatars({ repo, idx, repos, is2Xl, images }) {
+export default function SkillsCards({ repo, idx, repos, is2Xl, images }) {
   const {
     theme: { colors },
   } = useTheme();

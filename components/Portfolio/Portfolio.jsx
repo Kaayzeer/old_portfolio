@@ -6,7 +6,7 @@ import { useMediaQuery } from "../../hooks/useMediaQuery";
 import RepoLink from "./RepoLink";
 //userData
 import { userData } from "../../data";
-import SkillsAvatars from "./SkillsAvatars";
+import SkillsCards from "./SkillsCards";
 
 //destructuring userData
 const {
@@ -48,7 +48,7 @@ const Portfolio = ({ repos }) => {
         </Col>
         <Grid.Container gap={3}>
           {repositories.map((repo, idx) => (
-            <SkillsAvatars
+            <SkillsCards
               key={idx}
               repo={repo}
               idx={idx}

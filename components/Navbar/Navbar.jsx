@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 //styles
 import styles from "./navbar.module.css";
 //next icons
@@ -48,6 +48,37 @@ export const themeToggler = (theme, x) => {
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [showNav, setShowNav] = useState(true);
+  const [prevScrollY, setPrevScrollY] = useState(0);
+
+  const hideOrShowNavbar = () => {
+    if (typeof window !== "undefined") {
+      if (window.scrollY > prevScrollY) {
+        //hide nav on scroll down
+        setShowNav(false);
+      } else {
+        // show nav on scroll up
+        setShowNav(true);
+      }
+      setPrevScrollY(window.scrollY);
+    }
+  };
+
+  //listen to the window scrollY event whenever it changes
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", hideOrShowNavbar);
+
+      return () => {
+        window.removeEventListener("scroll", hideOrShowNavbar);
+      };
+    }
+  }, [prevScrollY]);
+
+  useEffect(() => {
+    //prevent scroll when modal is open
+    document.body.style.overflow = isOpen ? "hidden" : "";
+  }, [isOpen]);
 
   const isMd = useMediaQuery(835);
 
@@ -78,7 +109,7 @@ export default function Navbar() {
   });
   return (
     <header
-      className={styles.header}
+      className={showNav ? styles.header : styles.hiddenHeader}
       style={{ backgroundColor: colors.neutralLight.value }}
     >
       <nav className={styles.nav}>
