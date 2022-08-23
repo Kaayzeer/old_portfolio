@@ -62,7 +62,14 @@ export default function SkillsAvatars({ repo, idx, repos, is2Xl, images }) {
     );
 
   //filter repo Demos
-  const repoDemo = repos.map((repo) => repo.homepage).filter((repo) => repo);
+  const repoDemo = repos
+    .map((repo) => repo.homepage)
+    .filter(
+      (repo) =>
+        repo !== "portfolio-2-dusky.vercel.app" &&
+        repo !== null &&
+        repo.length > 0
+    );
 
   //card buttongroup click
   const handleClick = (e, idx) => {
