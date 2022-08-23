@@ -28,7 +28,7 @@ const Layout = ({ children, title, keywords, description, contactRef }) => {
         responsive
         css={{ backgroundColor: theme?.colors.gray200.value }}
       >
-        <Navbar /* contactRef={contactRef}  */ />
+        <Navbar />
         <Sidebar />
         {children}
       </Container>

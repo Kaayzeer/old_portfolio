@@ -19,21 +19,6 @@
   position: relative;
 }
 
-.link {
-  padding-top: 10px;
-  /* margin-left: 10%; */
-  font-weight: 600;
-}
-
-.link:hover {
-  transition: all 0.3s ease;
-  text-shadow: 0 0 0.01px black;
-}
-
-.link:active {
-  transition: 3s all ease;
-}
-
 .img {
   margin-left: 0;
 }

@@ -118,9 +118,7 @@ export default function Landing({ contactRef }) {
               shadow
               size="lg"
               color="secondary"
-              /*  id="contact" */
               onPress={openModal}
-              /* ref={contactRef} */
             >
               Get in touch
             </StyledButton>

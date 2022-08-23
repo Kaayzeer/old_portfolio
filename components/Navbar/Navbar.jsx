@@ -15,12 +15,12 @@ import { SocialAvatars } from "../Sidebar/Sidebar";
 import { motion, AnimatePresence } from "framer-motion";
 //nextUI
 import { useTheme as useNextTheme } from "next-themes";
-import { Switch, useTheme, Image } from "@nextui-org/react";
+import { Switch, useTheme, Image, styled, Text } from "@nextui-org/react";
 //hooks
 import { useMediaQuery } from "../../hooks/useMediaQuery";
 //userData
 import { userData } from "../../data";
-import FormModal from "../FormModal/FormModal";
+
 const { sidebar } = userData;
 const navbarInfo = [
   { section: "Home", href: "home" },
@@ -46,11 +46,7 @@ export const themeToggler = (theme, x) => {
   );
 };
 
-export default function Navbar(
-  {
-    /* contactRef */
-  }
-) {
+export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const isMd = useMediaQuery(835);
@@ -66,6 +62,20 @@ export default function Navbar(
     theme: { colors },
   } = useTheme();
 
+  const StyledLink = styled(Text, {
+    paddingTop: "10px",
+    fontWeight: "600",
+    transition: "all .3s ease",
+
+    "&:hover": {
+      color: colors.neutralSolidHover.value,
+      textShadow: "0 0 0.01px black",
+    },
+
+    "&:active": {
+      transition: "3s all ease",
+    },
+  });
   return (
     <header
       className={styles.header}
@@ -123,7 +133,7 @@ export default function Navbar(
                 duration={500}
                 className={styles.link}
               >
-                {info.section}
+                <StyledLink>{info.section}</StyledLink>
               </Link>
             ))}
             {themeToggler(isDark, setTheme)}

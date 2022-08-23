@@ -8,7 +8,7 @@ import Portfolio from "../components/Portfolio/Portfolio.jsx";
 import About from "../components/About/About.jsx";
 
 //nextUI
-import { Spacer, Container, useTheme } from "@nextui-org/react";
+import { Container, useTheme } from "@nextui-org/react";
 
 //userData
 import { userData } from "../data/index";
