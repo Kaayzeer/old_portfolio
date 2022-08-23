@@ -6,7 +6,7 @@ import { SunIcon } from "./SunIcon";
 import { MoonIcon } from "./MoonIcon";
 //react icons
 import { GiHamburgerMenu } from "react-icons/gi";
-import { GrClose } from "react-icons/gr";
+import { AiOutlineClose } from "react-icons/ai";
 //react-scroll
 import { Link } from "react-scroll";
 //functions
@@ -180,7 +180,7 @@ export default function Navbar() {
         <AnimatePresence mode="wait">
           {isOpen && (
             <>
-              <GrClose
+              <AiOutlineClose
                 className={styles.close}
                 onClick={(e) => handleOpenMenu(e)}
               />
