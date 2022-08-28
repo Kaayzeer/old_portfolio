@@ -49,7 +49,7 @@ export const themeToggler = (theme, x) => {
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [showNav, setShowNav] = useState(true);
-  const [prevScrollY, setPrevScrollY] = useState(0);
+  /*  const [prevScrollY, setPrevScrollY] = useState(0);
 
   const hideOrShowNavbar = () => {
     if (typeof window !== "undefined") {
@@ -73,7 +73,7 @@ export default function Navbar() {
         window.removeEventListener("scroll", hideOrShowNavbar);
       };
     }
-  }, [prevScrollY]);
+  }, [prevScrollY]); */
 
   useEffect(() => {
     //prevent scroll when modal is open

@@ -18,7 +18,7 @@ export default function SkillsCards({ repo, idx, repos, is2Xl, images }) {
 
   const StyledCard = styled(Card, {
     backgroundColor: colors.neutralBorder.value,
-    padding: "1rem 1.5rem",
+    padding: "1rem .7rem",
     height: !is2Xl ? "400px" : null,
     minHeight: "180px",
     cursor: "pointer",
@@ -57,6 +57,7 @@ export default function SkillsCards({ repo, idx, repos, is2Xl, images }) {
     .filter(
       (repo) =>
         repo.includes("scuf") ||
+        repo.includes("country-guide") ||
         repo.includes("nv_vercel") ||
         repo.includes("cities-app")
     );

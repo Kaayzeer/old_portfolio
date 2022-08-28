@@ -54,15 +54,12 @@ export default function Landing({ contactRef }) {
     /* padding: `0 ${is2Xl ? "10%" : "20%"} `, */
   });
 
-  const StyledH1 = styled(Text, {
+  const StyledP = styled(Text, {
     color: "#333",
-    fontSize: "3rem",
-    fontWeight: "100",
+    fontSize: "2rem",
+    fontWeight: "200",
     lineHeight: "1.5",
     whiteSpace: "nowrap",
-    overflow: "hidden",
-    position: "relative",
-    width: "550px",
   });
 
   const StyledButton = styled(Button, {
@@ -93,23 +90,26 @@ export default function Landing({ contactRef }) {
             <Text h3 size={`${!isLg ? "2em" : "1.5em"} `}>
               {title}
             </Text>
-            <h1 className={styles.h1}>
-              <div className={!isMd ? styles.subContainer : null}>
-                {subtitles.map((subTitle, idx) => (
-                  <div
-                    key={idx}
-                    className={styles.sub}
-                    style={{
-                      fontSize: !isMd ? "1.5rem" : "1.1rem",
-                      letterSpacing: !isMd ? "0" : "1px",
-                    }}
-                  >
-                    {subTitle}
-                    {/* {!isMd ? subTitle : paragraph} */}
-                  </div>
-                ))}
-              </div>
-            </h1>
+            {isLg && <StyledP>{paragraph}</StyledP>}
+            {!isLg && (
+              <h1 className={styles.h1}>
+                <div className={!isMd ? styles.subContainer : null}>
+                  {subtitles.map((subTitle, idx) => (
+                    <div
+                      key={idx}
+                      className={styles.sub}
+                      style={{
+                        fontSize: !isMd ? "1.5rem" : "1.1rem",
+                        letterSpacing: !isMd ? "0" : "1px",
+                      }}
+                    >
+                      {subTitle}
+                      {/* {!isMd ? subTitle : paragraph} */}
+                    </div>
+                  ))}
+                </div>
+              </h1>
+            )}
             <Spacer y={1} />
 
             <StyledButton

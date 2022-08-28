@@ -111,9 +111,10 @@ export const userData = {
     title: "Portfolio",
     baseURI: "https://api.github.com/users/kaayzeer/repos",
     thisURI: "https://github.com/Kaayzeer/portfolio_2",
-    repositories: ["Cities-App", "Next Venture", "Scuf"],
+    repositories: ["Cities-App", "W.I.T.W", "Next Venture", "Scuf"],
     images: [
       "/images/citiesFront.png",
+      "/images/witwFront.png",
       "/images/nextVentureFront.png",
       "/images/scufFront.png",
     ],

@@ -28,7 +28,7 @@ const Portfolio = ({ repos }) => {
         alignItems="center"
         justify="center"
         css={{
-          padding: `${isLg ? "20%" : "10%"}  ${is2Xl ? "10%" : "20%"} `,
+          padding: `${isLg ? "5%" : "20%"}  ${is2Xl ? "10%" : "20%"} `,
           fontFamily: "Lato",
         }}
       >
@@ -46,7 +46,7 @@ const Portfolio = ({ repos }) => {
             </Text>
           </Tooltip>
         </Col>
-        <Grid.Container gap={3}>
+        <Grid.Container gap={isLg ? 1 : 3}>
           {repositories.map((repo, idx) => (
             <SkillsCards
               key={idx}
