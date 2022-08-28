@@ -62,6 +62,8 @@ export default function SkillsCards({ repo, idx, repos, is2Xl, images }) {
         repo.includes("cities-app")
     );
 
+  console.log(repoUrl);
+
   //filter repo Demos
   const repoDemo = repos
     .map((repo) => repo.homepage)
@@ -72,6 +74,7 @@ export default function SkillsCards({ repo, idx, repos, is2Xl, images }) {
         repo.length > 0
     );
 
+  console.log(repoDemo);
   //card buttongroup click
   const handleClick = (e, idx) => {
     if (e.target.name === "demo") window.open(repoDemo[idx], "_blank");
