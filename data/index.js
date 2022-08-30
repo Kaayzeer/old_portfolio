@@ -6,9 +6,9 @@ export const userData = {
     title: "Hi, I'm Nikolas",
     paragraph: "Web Developer",
     subtitles: [
-      "Cross-platform developer 📱💻",
+      "Frontend developer 💻",
       "Exploring the JS ecosystem ♾️",
-      "Just getting started 📈",
+      "Cross-platform developer 📱💻",
     ],
   },
   sidebar: [
