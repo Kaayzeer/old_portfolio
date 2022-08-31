@@ -11,6 +11,13 @@ import {
   Button,
 } from "@nextui-org/react";
 
+//userData
+import { userData } from "../../data";
+
+const {
+  projects: { nvUrl, nvDesc },
+} = userData;
+
 export default function SkillsCards({ repo, idx, repos, is2Xl, images }) {
   const {
     theme: { colors },
@@ -44,6 +51,7 @@ export default function SkillsCards({ repo, idx, repos, is2Xl, images }) {
     letterSpacing: ".7px",
   });
 
+  console.log(nvDesc, nvUrl);
   //-------- repo data ---------
 
   //filter repo descriptions
@@ -58,11 +66,8 @@ export default function SkillsCards({ repo, idx, repos, is2Xl, images }) {
       (repo) =>
         repo.includes("scuf") ||
         repo.includes("country-guide") ||
-        repo.includes("nv_vercel") ||
         repo.includes("cities-app")
     );
-
-  console.log(repoUrl);
 
   //filter repo Demos
   const repoDemo = repos
@@ -74,13 +79,12 @@ export default function SkillsCards({ repo, idx, repos, is2Xl, images }) {
         repo.length > 0
     );
 
-  console.log(repoDemo);
   //card buttongroup click
   const handleClick = (e, idx) => {
-    if (e.target.name === "demo") window.open(repoDemo[idx], "_blank");
+    if (e.target.name === "demo")
+      window.open(repo === "Next Venture" ? nvUrl : repoDemo[idx], "_blank");
     if (e.target.name === "repo") window.open(repoUrl[idx], "_blank");
   };
-
   // ----------------------------//
 
   return (
@@ -105,7 +109,7 @@ export default function SkillsCards({ repo, idx, repos, is2Xl, images }) {
           <Spacer y={1} />
           <hr className={styles.hr} />
           <StyledText h4 size=".8rem" css={{ paddingBottom: "5px" }}>
-            {description[idx]}
+            {repo === "Next Venture" ? nvDesc : description[idx]}
           </StyledText>
           <hr className={styles.hr} />
           <Button.Group
@@ -119,9 +123,11 @@ export default function SkillsCards({ repo, idx, repos, is2Xl, images }) {
             <Button as="a" name="demo" onPress={(e) => handleClick(e, idx)}>
               Demo
             </Button>
-            <Button as="a" name="repo" onPress={(e) => handleClick(e, idx)}>
-              Repo
-            </Button>
+            {repo !== "Next Venture" && (
+              <Button as="a" name="repo" onPress={(e) => handleClick(e, idx)}>
+                Repo
+              </Button>
+            )}
           </Button.Group>
         </Card.Body>
       </StyledCard>

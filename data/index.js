@@ -111,12 +111,15 @@ export const userData = {
     title: "Portfolio",
     baseURI: "https://api.github.com/users/kaayzeer/repos",
     thisURI: "https://github.com/Kaayzeer/portfolio_2",
-    repositories: ["Cities-App", "W.I.T.W", "Next Venture", "Scuf"],
+    nvUrl: "https://nextventure.com",
+    nvDesc:
+      "A fullstack web application built for a costumer in my active workplace. I have been in charge of the most parts of the front end development like user authentication, signup and login to Firebase database. Stripe checkout and payments. Backend integration with REST-Api endpoints and Responsive design.",
+    repositories: ["Cities-App", "W.I.T.W", "Scuf", "Next Venture"],
     images: [
       "/images/citiesFront.png",
       "/images/witwFront.png",
-      "/images/nextVentureFront.png",
       "/images/scufFront.png",
+      "/images/nextVentureFront.png",
     ],
     languages: [
       {
