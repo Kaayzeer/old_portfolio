@@ -51,7 +51,6 @@ export default function SkillsCards({ repo, idx, repos, is2Xl, images }) {
     letterSpacing: ".7px",
   });
 
-  console.log(nvDesc, nvUrl);
   //-------- repo data ---------
 
   //filter repo descriptions

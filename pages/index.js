@@ -42,7 +42,7 @@ export default function Home({ repos }) {
         <Landing />
         <Skills />
         <Portfolio repos={repos} />
-        {/* <About repos={repos} /> */}
+        {/*       <About /> */}
       </Container>
     </>
   );

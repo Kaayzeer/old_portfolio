@@ -111,7 +111,7 @@ export const userData = {
     title: "Portfolio",
     baseURI: "https://api.github.com/users/kaayzeer/repos",
     thisURI: "https://github.com/Kaayzeer/portfolio_2",
-    nvUrl: "https://nextventure.com",
+    nvUrl: /* "https://nextventure.com", */ "https://new-nv-vercel.vercel.app/",
     nvDesc:
       "A fullstack web application built for a costumer in my active workplace. I have been in charge of the most parts of the front end development like user authentication, signup and login to Firebase database. Stripe checkout and payments. Backend integration with REST-Api endpoints and Responsive design.",
     repositories: ["Cities-App", "W.I.T.W", "Scuf", "Next Venture"],
@@ -164,8 +164,12 @@ export const userData = {
     ],
   },
   about: {
-    description:
+    title:
       "I am a frontend cross-platform app developer, just finished my education in KYH vocational school. I strive to make meaningful applications with the best UI practices.",
-    picture: "/profile.jpg",
+    description:
+      "I thrive best in environments where I can be challenged and love testing new techniques! and I take every chance I get to influence and contribute with my own ideas.",
+    description2:
+      "I am happy to take my own initiative to improve and possibly come up with innovative solutions. I also find collaboration easy and am solution-oriented.",
+    picture: "/images/profilepic.webp",
   },
 };
