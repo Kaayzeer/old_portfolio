@@ -113,7 +113,7 @@ export const userData = {
     thisURI: "https://github.com/Kaayzeer/portfolio_2",
     nvUrl: /* "https://nextventure.com", */ "https://new-nv-vercel.vercel.app/",
     nvDesc:
-      "A fullstack web application built for a costumer in my active workplace. I have been in charge of the most parts of the front end development like user authentication, signup and login to Firebase database. Stripe checkout and payments. Backend integration with REST-Api endpoints and Responsive design.",
+      "A fullstack web application built for a client at work. I have been in charge of the most parts of the Front end development.",
     repositories: ["Cities-App", "W.I.T.W", "Scuf", "Next Venture"],
     images: [
       "/images/citiesFront.png",
@@ -121,21 +121,28 @@ export const userData = {
       "/images/scufFront.png",
       "/images/nextVentureFront.png",
     ],
-    languages: [
-      {
-        NextVenture: [
-          "Typescript",
-          "Next.js",
-          "Firebase",
-          "Tailwind.css",
-          "Postman",
-          "Node.js",
-          "Stripe.js",
-        ],
-        SCUF: ["Typescript", "React", "Firebase", "Css-modules"],
-        CitiesApp: ["Typescript", "React-Native"],
-      },
-    ],
+    languages: {
+      citiesapp: ["typescript", "react-native", "figma", "API", "expo-go"],
+      witw: [
+        "javascript",
+        "react",
+        "open-source",
+        "API",
+        "html",
+        "styled-components",
+      ],
+      scuf: ["javascript", "react", "firebase", "html", "css"],
+      nextventure: [
+        "next.js",
+        "firebase",
+        "node.js",
+        "html",
+        "postman",
+        "typescript",
+        "tailwind.css",
+        "stripe.js",
+      ],
+    },
   },
   experience: {
     "Work Experience": [

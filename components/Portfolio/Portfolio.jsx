@@ -10,13 +10,14 @@ import SkillsCards from "./SkillsCards";
 
 //destructuring userData
 const {
-  projects: { title, repositories, images, languages, thisURI },
+  projects: { title, repositories, images, thisURI },
 } = userData;
 
 const Portfolio = ({ repos }) => {
   const is2Xl = useMediaQuery(1400);
   const isLg = useMediaQuery(1100);
   const isMd = useMediaQuery(835);
+  const isSm = useMediaQuery(500);
 
   return (
     <>
@@ -28,7 +29,7 @@ const Portfolio = ({ repos }) => {
         alignItems="center"
         justify="center"
         css={{
-          padding: `${isLg ? "5%" : "20%"}  ${is2Xl ? "10%" : "20%"} `,
+          padding: !isSm ? "10%" : !is2Xl && "20%",
           fontFamily: "Lato",
         }}
       >
@@ -40,6 +41,7 @@ const Portfolio = ({ repos }) => {
               weight="bold"
               css={{
                 cursor: "pointer",
+                paddingBottom: "1rem",
               }}
             >
               {title}
