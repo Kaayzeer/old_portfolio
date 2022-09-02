@@ -32,6 +32,7 @@ const Portfolio = ({ repos }) => {
           padding: !isSm ? "10%" : !is2Xl && "20%",
           fontFamily: "Lato",
           margin: "2rem 0",
+          marginBottom: isMd ? "100px" : "50px",
         }}
       >
         <Col align={`${!isMd ? "center" : "center"}`}>

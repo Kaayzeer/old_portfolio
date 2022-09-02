@@ -119,6 +119,7 @@ export default function SkillsCards({ repo, idx, repos, is2Xl, images }) {
           },
         }}
         viewport={{ once: true }}
+        style={{ width: "100%" }}
       >
         <StyledCard isHoverable={true}>
           <Card.Body>
