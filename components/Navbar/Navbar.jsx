@@ -22,6 +22,7 @@ import { useMediaQuery } from "../../hooks/useMediaQuery";
 import { userData } from "../../data";
 
 const { sidebar } = userData;
+
 const navbarInfo = [
   { section: "Home", href: "home" },
   { section: "Skills", href: "skills" },
@@ -92,6 +93,8 @@ export default function Navbar() {
     isDark,
     theme: { colors },
   } = useTheme();
+
+  console.log(colors);
 
   return (
     <header

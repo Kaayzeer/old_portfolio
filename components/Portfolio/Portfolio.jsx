@@ -26,11 +26,12 @@ const Portfolio = ({ repos }) => {
         xl
         responsive
         display="flex"
-        alignItems="center"
+        alignitems="center"
         justify="center"
         css={{
           padding: !isSm ? "10%" : !is2Xl && "20%",
           fontFamily: "Lato",
+          margin: "2rem 0",
         }}
       >
         <Col align={`${!isMd ? "center" : "center"}`}>

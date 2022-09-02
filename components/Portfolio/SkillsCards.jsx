@@ -41,20 +41,16 @@ export default function SkillsCards({ repo, idx, repos, is2Xl, images }) {
     textAlign: "left",
     lineHeight: "1.4rem",
     letterSpacing: ".7px",
-
     paddingBottom: "5px",
-
     width: "95%",
   });
 
   const StyledBadge = styled(Text, {
+    padding: "5px 10px",
     textAlign: "center",
-
     lineHeight: "1.5rem",
     letterSpacing: ".7px",
     border: `1px solid ${colors.purple300.value}`,
-    /*  borderBottom: `1px solid ${colors.text.value}`, */
-    width: "120px",
     borderRadius: "4px",
     cursor: "crosshair",
     color: colors.purple100.value,
@@ -62,6 +58,7 @@ export default function SkillsCards({ repo, idx, repos, is2Xl, images }) {
     "&:hover": {
       backgroundColor: colors.purple700.value,
       transition: "all 0.3s ease-in-out",
+      color: "white",
     },
   });
 
@@ -134,7 +131,7 @@ export default function SkillsCards({ repo, idx, repos, is2Xl, images }) {
                   marginTop: "5px",
                   marginRight: "5px",
                   width: "95%",
-                  /* width: isMd ? "90%" : "0%", */
+
                   marginLeft: "0px",
                 }}
               >

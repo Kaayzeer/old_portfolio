@@ -4,16 +4,13 @@ import * as React from "react";
 import Head from "next/head";
 
 //nextUI
+//next ui
 import { Container, useTheme } from "@nextui-org/react";
-
-//styles
-import styles from "../../styles/Home.module.css";
-
 //components
 import Navbar from "../Navbar/Navbar";
 import Sidebar from "../Sidebar/Sidebar";
 
-const Layout = ({ children, title, keywords, description, contactRef }) => {
+const Layout = ({ children, title, keywords, description }) => {
   const { theme } = useTheme();
 
   return (

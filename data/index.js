@@ -155,12 +155,13 @@ export const userData = {
     ],
   },
   about: {
-    title:
-      "I am a frontend cross-platform app developer, just finished my education in KYH vocational school. I strive to make meaningful applications with the best UI practices.",
+    title: "Myself",
+    subtitle:
+      "Programmer, with a degree in frontend development at KYH vocational school. Working as a consultant at the moment. I strive to make meaningful applications with the best UI practices.",
     description:
       "I thrive best in environments where I can be challenged and love testing new techniques! and I take every chance I get to influence and contribute with my own ideas.",
     description2:
       "I am happy to take my own initiative to improve and possibly come up with innovative solutions. I also find collaboration easy and am solution-oriented.",
-    picture: "/images/profilepic.webp",
+    picture: "/images/aboutImg.svg",
   },
 };

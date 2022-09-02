@@ -30,7 +30,7 @@ const {
   landing: { title, subtitles, paragraph },
 } = userData;
 
-export default function Landing({ contactRef }) {
+export default function Landing() {
   const is2Xl = useMediaQuery(1400);
   const isLg = useMediaQuery(1068);
   const isMd = useMediaQuery(835);
@@ -43,16 +43,10 @@ export default function Landing({ contactRef }) {
   };
 
   const {
-    isDark,
     theme: { colors },
   } = useTheme();
 
   //customStyles
-
-  const StyledContainer = styled(Container, {
-    /* height: "100vh", */
-    /* padding: `0 ${is2Xl ? "10%" : "20%"} `, */
-  });
 
   const StyledP = styled(Text, {
     color: "#333",
@@ -74,7 +68,7 @@ export default function Landing({ contactRef }) {
   return (
     <>
       <FormModal closeModal={closeModal} visible={visible} />
-      <StyledContainer
+      <Container
         id="home"
         xl
         responsive
@@ -104,7 +98,6 @@ export default function Landing({ contactRef }) {
                       }}
                     >
                       {subTitle}
-                      {/* {!isMd ? subTitle : paragraph} */}
                     </div>
                   ))}
                 </div>
@@ -132,7 +125,7 @@ export default function Landing({ contactRef }) {
             />
           )}
         </Row>
-      </StyledContainer>
+      </Container>
     </>
   );
 }

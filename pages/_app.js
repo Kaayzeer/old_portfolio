@@ -8,19 +8,7 @@ import { ThemeProvider as NextThemesProvider } from "next-themes";
 const lightTheme = createTheme({
   type: "light",
   theme: {
-    colors: {
-      /*     primaryLight: "#FFF0D5ff",
-      primaryLightHover: "#EEE1D0ff",
-      primaryLightActive: "#DDD2CCff",
-      primaryLightContrast: "#CCC3C7ff",
-      primary: "#BBB4C2ff",
-      primaryBorder: "#AAA4BEff",
-      primaryBorderHover: "#9995B9ff",
-      primarySolidHover: "#8886B4ff",
-      primarySolidContrast: "#7777B0ff",
-      primaryShadow: "#6668ABff", */
-      /* color: "#777", */
-    }, // optional
+    colors: {}, // optional
   },
 });
 

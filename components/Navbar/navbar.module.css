@@ -68,7 +68,7 @@
 }
 
 .link:hover {
-  color: rgba(246, 239, 239, 0.612);
+  color: rgb(127, 125, 125);
   transition: 0.3s all ease-in-out;
 }
 

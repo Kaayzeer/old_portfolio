@@ -1,7 +1,6 @@
 import React from "react";
 // next ui
 import { Col, Text, Button } from "@nextui-org/react";
-
 //next ui
 import { useTheme } from "@nextui-org/react";
 
