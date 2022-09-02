@@ -111,7 +111,7 @@ export const userData = {
     title: "Portfolio",
     baseURI: "https://api.github.com/users/kaayzeer/repos",
     thisURI: "https://github.com/Kaayzeer/portfolio_2",
-    nvUrl: /* "https://nextventure.com", */ "https://new-nv-vercel.vercel.app/",
+    nvUrl: "https://nextventure.com" /* "https://new-nv-vercel.vercel.app/" */,
     nvDesc:
       "A fullstack web application built for a client at work. I have been in charge of the most parts of the Front end development.",
     repositories: ["Cities-App", "W.I.T.W", "Scuf", "Next Venture"],
