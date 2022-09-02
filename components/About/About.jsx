@@ -64,7 +64,7 @@ export default function About() {
 
   return (
     <StyledContainer
-      id="conctact"
+      id="about"
       xl
       responsive
       display="flex"

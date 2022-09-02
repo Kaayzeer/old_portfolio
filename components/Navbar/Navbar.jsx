@@ -27,6 +27,7 @@ const navbarInfo = [
   { section: "Home", href: "home" },
   { section: "Skills", href: "skills" },
   { section: "Portfolio", href: "portfolio" },
+  { section: "About", href: "about" },
 ];
 
 //ThemeSwitcher reusable
