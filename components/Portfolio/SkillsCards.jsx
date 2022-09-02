@@ -35,7 +35,7 @@ export default function SkillsCards({ repo, idx, repos, is2Xl, images }) {
     backgroundColor: "transparent",
     border: `1px solid ${colors.purple300.value}`,
     padding: "1rem .7rem",
-
+    width: "inherit",
     minHeight: isMd ? "180px" : "400px",
   });
 
@@ -107,65 +107,146 @@ export default function SkillsCards({ repo, idx, repos, is2Xl, images }) {
 
   return (
     <Grid xs={12} sm={6}>
-      <StyledCard isHoverable={true}>
-        <Card.Body>
-          <StyledText
-            h3
-            size="1.2rem"
-            display="flex"
-            align="center"
-            css={{ textAlign: "center" }}
-          >
-            {repo}
-          </StyledText>
-
-          <Spacer y={1} />
-          <hr className={styles.hr} />
-          <Row>
-            <Col>
-              <StyledText h4 size=".8rem">
-                {repo === "Next Venture" ? nvDesc : description[idx]}
-              </StyledText>
-              <Row
-                gap={1}
-                wrap="wrap"
-                style={{
-                  marginTop: "5px",
-                  marginRight: "5px",
-                  width: "95%",
-
-                  marginLeft: "0px",
-                }}
+      {!isMd && (
+        <motion.div
+          initial={{ y: 300, rotate: -10 }}
+          whileInView={{
+            y: 50,
+            rotate: 0,
+            transition: {
+              type: "spring",
+              bounce: 0.4,
+              duration: 0.8,
+            },
+          }}
+          viewport={{ once: true }}
+        >
+          <StyledCard isHoverable={true}>
+            <Card.Body>
+              <StyledText
+                h3
+                size="1.2rem"
+                display="flex"
+                align="center"
+                css={{ textAlign: "center" }}
               >
-                {languages[repoIndex].map((language, idx) => (
-                  <StyledBadge key={idx} p size=".6rem">
-                    {language}
-                  </StyledBadge>
-                ))}
+                {repo}
+              </StyledText>
+
+              <Spacer y={1} />
+              <hr className={styles.hr} />
+              <Row>
+                <Col>
+                  <StyledText h4 size=".8rem">
+                    {repo === "Next Venture" ? nvDesc : description[idx]}
+                  </StyledText>
+                  <Row
+                    gap={1}
+                    wrap="wrap"
+                    style={{
+                      marginTop: "5px",
+                      marginRight: "5px",
+                      width: "95%",
+
+                      marginLeft: "0px",
+                    }}
+                  >
+                    {languages[repoIndex].map((language, idx) => (
+                      <StyledBadge key={idx} p size=".6rem">
+                        {language}
+                      </StyledBadge>
+                    ))}
+                  </Row>
+                </Col>
+                <Image src={images[idx]} height={200} width={200} />
               </Row>
-            </Col>
-            <Image src={images[idx]} height={200} width={200} />
-          </Row>
-          <hr className={styles.hr} />
-          <Button.Group
-            color="secondary"
-            ghost
-            animated
-            size="md"
-            borderWeight="bold"
-            css={{ margin: "auto auto 0", cursor: "pointer" }}
-          >
-            <Button as="a" name="demo" onPress={(e) => handleClick(e, idx)}>
-              Demo
-            </Button>
-            {repo !== "Next Venture" && (
-              <Button as="a" name="repo" onPress={(e) => handleClick(e, idx)}>
-                Repo
+              <hr className={styles.hr} />
+              <Button.Group
+                color="secondary"
+                ghost
+                animated
+                size="md"
+                borderWeight="bold"
+                css={{ margin: "auto auto 0", cursor: "pointer" }}
+              >
+                <Button as="a" name="demo" onPress={(e) => handleClick(e, idx)}>
+                  Demo
+                </Button>
+                {repo !== "Next Venture" && (
+                  <Button
+                    as="a"
+                    name="repo"
+                    onPress={(e) => handleClick(e, idx)}
+                  >
+                    Repo
+                  </Button>
+                )}
+              </Button.Group>
+            </Card.Body>
+          </StyledCard>
+        </motion.div>
+      )}
+      {isMd && (
+        <StyledCard isHoverable={true}>
+          <Card.Body>
+            <StyledText
+              h3
+              size="1.2rem"
+              display="flex"
+              align="center"
+              css={{ textAlign: "center" }}
+            >
+              {repo}
+            </StyledText>
+
+            <Spacer y={1} />
+            <hr className={styles.hr} />
+            <Row>
+              <Col>
+                <StyledText h4 size=".8rem">
+                  {repo === "Next Venture" ? nvDesc : description[idx]}
+                </StyledText>
+                <Row
+                  gap={1}
+                  wrap="wrap"
+                  style={{
+                    marginTop: "5px",
+                    marginRight: "5px",
+                    width: "95%",
+
+                    marginLeft: "0px",
+                  }}
+                >
+                  {languages[repoIndex].map((language, idx) => (
+                    <StyledBadge key={idx} p size=".6rem">
+                      {language}
+                    </StyledBadge>
+                  ))}
+                </Row>
+              </Col>
+              <Image src={images[idx]} height={200} width={200} />
+            </Row>
+            <hr className={styles.hr} />
+            <Button.Group
+              color="secondary"
+              ghost
+              animated
+              size="md"
+              borderWeight="bold"
+              css={{ margin: "auto auto 0", cursor: "pointer" }}
+            >
+              <Button as="a" name="demo" onPress={(e) => handleClick(e, idx)}>
+                Demo
               </Button>
-            )}
-          </Button.Group>
-        </Card.Body>
-      </StyledCard>
+              {repo !== "Next Venture" && (
+                <Button as="a" name="repo" onPress={(e) => handleClick(e, idx)}>
+                  Repo
+                </Button>
+              )}
+            </Button.Group>
+          </Card.Body>
+        </StyledCard>
+      )}
     </Grid>
   );
 }
