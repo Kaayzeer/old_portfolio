@@ -113,7 +113,7 @@ export const userData = {
     thisURI: "https://github.com/Kaayzeer/portfolio_2",
     nvUrl: "https://nextventure.com" /* "https://new-nv-vercel.vercel.app/" */,
     nvDesc:
-      "A fullstack web application built for a client at work. I have been in charge of the most parts of the Front end development.",
+      "A fullstack web application built for a client at work. Where you can find, buy and sell old domains and have contact with the company",
     repositories: ["Cities-App", "W.I.T.W", "Scuf", "Next Venture"],
     images: [
       "/images/citiesFront.png",
@@ -123,9 +123,17 @@ export const userData = {
     ],
     languages: {
       citiesapp: ["javascript", "html", "css", "figma", "API"],
-      witw: ["javascript", "html", "css", "API", "open-source"],
-      scuf: ["javascript", "html", "css", "scrum"],
-      nextventure: ["javascript", "node.js", "html", "css", "postman", "scrum"],
+      witw: ["javascript", "html", "styled-components", "API", "open-source"],
+      scuf: ["javascript", "html", "css", "scrum", "firebase"],
+      nextventure: [
+        "typescript",
+        "node.js",
+        "html",
+        "tailwind.css",
+        "postman",
+        "scrum",
+        "firebase",
+      ],
     },
   },
   experience: {
