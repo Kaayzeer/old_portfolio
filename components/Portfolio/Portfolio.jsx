@@ -29,7 +29,7 @@ const Portfolio = ({ repos }) => {
         alignitems="center"
         justify="center"
         css={{
-          padding: !isSm ? "10%" : !is2Xl && "20%",
+          padding: !isSm ? "5% 10%" : !is2Xl && "5% 20%",
           fontFamily: "Lato",
           margin: "2rem 0",
           marginBottom: isMd ? "100px" : "50px",

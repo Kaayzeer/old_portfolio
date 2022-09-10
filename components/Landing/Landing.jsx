@@ -49,9 +49,10 @@ export default function Landing() {
   //customStyles
 
   const StyledP = styled(Text, {
-    color: "#333",
+    color: "#776c",
     fontSize: "2rem",
     fontWeight: "200",
+    lineHeight: "1.3rem",
     lineHeight: "1.5",
     whiteSpace: "nowrap",
   });
@@ -79,8 +80,17 @@ export default function Landing() {
           padding: `   ${isLg ? "30%" : "10%"}  ${is2Xl ? "10%" : "20%"} `,
         }}
       >
-        <Row justify="center" align="center">
+        <Row justify={"center"} align="center">
           <Col align={`${!isMd ? "start" : "center"}`}>
+            {isMd && (
+              <Image
+                src={"/images/developer.svg"}
+                height={isMd && 300}
+                width={isMd && 300}
+                alt="Landing Image"
+                style={{ marginBottom: "15%" }}
+              />
+            )}
             <Text h3 size={`${!isLg ? "2em" : "1.5em"} `}>
               {title}
             </Text>

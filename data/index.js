@@ -163,6 +163,7 @@ export const userData = {
     ],
   },
   about: {
+    heading: "About",
     title: "Myself",
     subtitle:
       "Programmer, with a degree in frontend development at KYH vocational school. Working as a consultant at the moment. I strive to make meaningful applications with the best UI practices.",

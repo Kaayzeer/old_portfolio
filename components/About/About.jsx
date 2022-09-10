@@ -14,7 +14,7 @@ import {
 import { userData } from "../../data";
 
 const {
-  about: { subtitle, title, description, picture, description2 },
+  about: { heading, subtitle, title, description, picture, description2 },
   sidebar,
 } = userData;
 
@@ -25,6 +25,8 @@ import { useMediaQuery } from "../../hooks/useMediaQuery";
 import { SocialAvatars } from "../Sidebar/Sidebar";
 
 export default function About() {
+  const is2Xl = useMediaQuery(1400);
+  const isLg = useMediaQuery(1100);
   const isMd = useMediaQuery(835);
   const isSm = useMediaQuery(700);
   const {
@@ -34,21 +36,20 @@ export default function About() {
   const StyledContainer = styled(Container, {
     backgroundColor: colors.purple300.value,
     minHeight: "150px",
-    padding: isMd ? "5%" : "2% 20%",
+    padding: !isSm ? "5% 10%" : !is2Xl && "5% 20%",
   });
 
-  const StyledP = styled(Text, {
-    paddingTop: "10px",
-    textAlign: !isSm ? "left" : "center",
+  const StyledH1 = styled(Text, {
+    padding: isMd ? "5%" : "0 0 5%",
+    textAlign: "center",
     lineHeight: "1.4rem",
     letterSpacing: ".7px",
-    fontSize: !isMd ? "18px" : "14px",
+    fontSize: !isLg ? "3.6em" : "2.7em",
   });
 
   const StyledH2 = styled(Text, {
-    paddingTop: "10px",
     textAlign: !isSm ? "left" : "center",
-    lineHeight: "1.4rem",
+    lineHeight: "1.6rem",
     letterSpacing: ".7px",
     fontSize: !isMd ? "24px" : "18px",
   });
@@ -56,9 +57,19 @@ export default function About() {
   const StyledH3 = styled(Text, {
     paddingTop: "10px",
     textAlign: !isSm ? "left" : "center",
-    lineHeight: "1.4rem",
+    lineHeight: "1.8rem",
     letterSpacing: ".7px",
     fontSize: !isMd ? "20px" : "16px",
+    fontWeight: "300",
+    fontStyle: "italic",
+  });
+
+  const StyledP = styled(Text, {
+    paddingTop: "10px",
+    textAlign: !isSm ? "left" : "center",
+    lineHeight: "1.8rem",
+    letterSpacing: ".7px",
+    fontSize: !isMd ? "18px" : "14px",
     fontWeight: "400",
   });
 
@@ -71,36 +82,39 @@ export default function About() {
       alignItems="center"
       justify="center"
     >
-      {!isSm ? (
-        <Row justify="center" align="center">
-          <Col alignItems="center" style={{ width: "50%" }}>
-            <Image
-              src={picture}
-              alt="about_me_picture"
-              height="35"
-              width="35"
-            />
-          </Col>
+      {!isMd ? (
+        <>
+          <StyledH1>{heading}</StyledH1>
+          <Row justify="center" align="center">
+            <Col alignItems="center">
+              <Image
+                src={picture}
+                alt="about_me_picture"
+                height="40"
+                width="50"
+              />
+            </Col>
 
-          <Col alignItems="flex-start">
-            <div style={{ width: isMd ? "80%" : "70%", margin: "0 auto" }}>
-              <StyledH2 h2>{title}</StyledH2>
-              <StyledH3 h3>{subtitle}</StyledH3>
-              <StyledP p>{description}</StyledP>
-              <StyledP p>{description2}</StyledP>
-              <div
-                style={{
-                  paddingTop: "1rem",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-              >
-                {SocialAvatars(sidebar)}
+            <Col alignItems="flex-start">
+              <div style={{ width: isMd ? "80%" : "100%", margin: "0 auto" }}>
+                <StyledH2 h2>{title}</StyledH2>
+                <StyledH3 h3>{subtitle}</StyledH3>
+                <StyledP p>{description}</StyledP>
+                <StyledP p>{description2}</StyledP>
+                <div
+                  style={{
+                    paddingTop: "1rem",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  {SocialAvatars(sidebar)}
+                </div>
               </div>
-            </div>
-          </Col>
-        </Row>
+            </Col>
+          </Row>
+        </>
       ) : (
         <Col justify="center" align="center">
           <div style={{ width: "70%" }}>
@@ -112,8 +126,9 @@ export default function About() {
             />
           </div>
 
-          <div style={{ width: "80%", margin: "0 auto" }}>
-            <StyledH2 h2 style={{ textAlign: "center" }}>
+          <div style={{ width: "100%", margin: "0 auto" }}>
+            <StyledH1>{heading}</StyledH1>
+            <StyledH2 h2 style={{ textAlign: "left" }}>
               {title}
             </StyledH2>
             <StyledH3 h3>{subtitle}</StyledH3>
