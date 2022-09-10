@@ -36,7 +36,7 @@ export default function About() {
   const StyledContainer = styled(Container, {
     backgroundColor: colors.purple300.value,
     minHeight: "150px",
-    padding: !isSm ? "5% 10%" : !is2Xl && "5% 20%",
+    padding: isSm ? "10% 10%" : !isMd ? "10% 10%" : !is2Xl && "5% 20%",
   });
 
   const StyledH1 = styled(Text, {
@@ -48,7 +48,7 @@ export default function About() {
   });
 
   const StyledH2 = styled(Text, {
-    textAlign: !isSm ? "left" : "center",
+    textAlign: "left",
     lineHeight: "1.6rem",
     letterSpacing: ".7px",
     fontSize: !isMd ? "24px" : "18px",
@@ -56,7 +56,7 @@ export default function About() {
 
   const StyledH3 = styled(Text, {
     paddingTop: "10px",
-    textAlign: !isSm ? "left" : "center",
+    textAlign: "left",
     lineHeight: "1.8rem",
     letterSpacing: ".7px",
     fontSize: !isMd ? "20px" : "16px",
@@ -66,7 +66,7 @@ export default function About() {
 
   const StyledP = styled(Text, {
     paddingTop: "10px",
-    textAlign: !isSm ? "left" : "center",
+    textAlign: "left",
     lineHeight: "1.8rem",
     letterSpacing: ".7px",
     fontSize: !isMd ? "18px" : "14px",
@@ -79,24 +79,24 @@ export default function About() {
       xl
       responsive
       display="flex"
-      alignItems="center"
+      alignitems="center"
       justify="center"
     >
       {!isMd ? (
         <>
           <StyledH1>{heading}</StyledH1>
           <Row justify="center" align="center">
-            <Col alignItems="center">
+            <Col alignItems="center" style={{ width: "50%" }}>
               <Image
                 src={picture}
                 alt="about_me_picture"
-                height="40"
+                height="30"
                 width="50"
               />
             </Col>
 
             <Col alignItems="flex-start">
-              <div style={{ width: isMd ? "80%" : "100%", margin: "0 auto" }}>
+              <div style={{ width: isMd ? "80%" : "75%", margin: "0 auto" }}>
                 <StyledH2 h2>{title}</StyledH2>
                 <StyledH3 h3>{subtitle}</StyledH3>
                 <StyledP p>{description}</StyledP>
